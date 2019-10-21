@@ -1,0 +1,771 @@
+                    J E S 2  J O B  L O G  --  S Y S T E M  S 0 W 1  --  N O D E  Z O S K C T R         
+
+ 
+23.48.51 JOB05068 ---- THURSDAY,  29 NOV 2018 ----
+23.48.51 JOB05068  IRR010I  USERID KC03J06  IS ASSIGNED TO THIS JOB.
+23.48.51 JOB05068  ICH70001I KC03J06  LAST ACCESS AT 23:48:21 ON THURSDAY, NOVEMBER 29, 2018
+23.48.51 JOB05068  $HASP373 KC03J06A STARTED - INIT 2    - CLASS A        - SYS S0W1
+23.48.51 JOB05068  -                                         --TIMINGS (MINS.)--            ----PAGING COUNTS---
+23.48.51 JOB05068  -JOBNAME  STEPNAME PROCSTEP    RC   EXCP    TCB    SRB  CLOCK   SERV  PG   PAGE   SWAP    VIO SWAPS
+23.48.51 JOB05068  -KC03J06A                      00     69 ******    .00     .0    286   0      0      0      0     0
+23.48.51 JOB05068  -KC03J06A ENDED.  NAME-ANDREW SCHEEL        TOTAL TCB CPU TIME=   .00  TOTAL ELAPSED TIME=    .0
+23.48.51 JOB05068  $HASP395 KC03J06A ENDED
+
+------ JES2 JOB STATISTICS ------
+
+
+  29 NOV 2018 JOB EXECUTION DATE
+
+
+          359 CARDS READ
+
+
+          644 SYSOUT PRINT RECORDS
+
+
+            0 SYSOUT PUNCH RECORDS
+
+
+           78 SYSOUT SPOOL KBYTES
+
+
+         0.00 MINUTES EXECUTION TIME
+!! END OF JES SPOOL FILE !!
+       1 //KC03J06A JOB ,'ANDREW SCHEEL' ,MSGCLASS=H                             JOB05068
+       2 //JSTEP01  EXEC PGM=ASSIST                                              00020001
+       3 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR                       00030001
+       4 //SYSPRINT DD SYSOUT=*                                                  00040001
+       5 //SYSIN    DD *                                                         00050001
+         //*                                                                     00150031
+       6 //FT05F001 DD DSN=KC02322.CSCI360.DATAFA18(DATA9),DISP=SHR              01430099
+         //*                                                                     01440031
+       7 //FT06F001 DD SYSOUT=*                                                  01450031
+!! END OF JES SPOOL FILE !!
+ICH70001I KC03J06  LAST ACCESS AT 23:48:21 ON THURSDAY, NOVEMBER 29, 2018
+IEF236I ALLOC. FOR KC03J06A JSTEP01
+IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+IEF237I JES2 ALLOCATED TO SYSPRINT
+IEF237I JES2 ALLOCATED TO SYSIN
+IGD103I SMS ALLOCATED TO DDNAME FT05F001
+IEF237I JES2 ALLOCATED TO FT06F001
+IEF142I KC03J06A JSTEP01 - STEP WAS EXECUTED - COND CODE 0000
+IGD104I KC00NIU.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB 
+IEF285I   KC03J06.KC03J06A.JOB05068.D0000102.?         SYSOUT        
+IEF285I   KC03J06.KC03J06A.JOB05068.D0000101.?         SYSIN         
+IGD104I KC02322.CSCI360.DATAFA18                     RETAINED,  DDNAME=FT05F001
+IEF285I   KC03J06.KC03J06A.JOB05068.D0000103.?         SYSOUT        
+IEF373I STEP/JSTEP01 /START 2018333.2348
+IEF032I STEP/JSTEP01 /STOP  2018333.2348 
+        CPU:     0 HR  00 MIN  00.01 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+        VIRT:   584K  SYS:   268K  EXT:        0K  SYS:    12112K
+        ATB- REAL:                    12K  SLOTS:                     0K
+             VIRT- ALLOC:       2M SHRD:       0M
+IEF375I  JOB/KC03J06A/START 2018333.2348
+IEF033I  JOB/KC03J06A/STOP  2018333.2348 
+        CPU:     0 HR  00 MIN  00.01 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+!! END OF JES SPOOL FILE !!
+
+*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT            
+
+                                                                                                                                    
+
+                                                                                                               PAGE    1            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+                                      1 *************************************************                       00060001            
+                                      2 *                                               *                       00070001            
+                                      3 * INTRODUCTION TO PACKED DECIMAL     11/29/2018 *                       00080099            
+                                      4 *        PLUS SOME MORE                         *                       00090099            
+                                      5 *************************************************                       00100001            
+000000                                6 ASSIGN9  CSECT                                                          00101099            
+000000 90EC D00C            0000C     7          STM   14,12,12(13)   SAVE REGS IN CALLER'S SAVE AREA           00102001            
+000004 18CF                           8          LR    12,15          COPY CSECT ADDRESS INTO R12               00103001            
+000000                                9          USING ASSIGN9,12     ESTABLISH R12 AS THE BASE REG             00104099            
+000006 41E0 C2B4            002B4    10          LA    14,SAVEAREA    R14 POINTS TO THIS CSECT'S SAVE AREA      00105001            
+00000A 50E0 D008            00008    11          ST    14,8(,13)      STORE ADDRESS OF THIS CSECT'S SAVE AREA   00106001            
+00000E 50D0 E004            00004    12          ST    13,4(,14)      STORE ADDRESS OF CALLER'S SAVE AREA       00107001            
+000012 18DE                          13          LR    13,14          POINT R13 AT THIS CSECT'S SAVE AREA       00108001            
+                                     14 *                                                                       00109001            
+                                     15 *  HERE IS WHERE YOU WILL WRITE YOUR PROGRAM. OF COURSE, THERE WILL BE  00109101            
+                                     16 *  STORAGE THAT YOU DECLARE BELOW BETWEEN THE SAVEAREA LABEL AND THE    00109201            
+                                     17 *  END STATEMENT. YOU WILL ALSO NEED TO ADD THE JCL ABOVE THE CSECT     00109301            
+                                     18 *  AND BELOW THE END STATEMENT. YOU CAN ALSO GET RID OF THE DOC BOX     00109401            
+                                     19 *  ABOVE.                                                               00109501            
+                                     20 *                                                                       00109601            
+000014 1B77                          21          SR    7,7                                                      00110499            
+000016 4170 C300            00300    22          LA    7,MAX             SET TO 15                              00110599            
+00001A 1B88                          23          SR    8,8                                                      00110699            
+00001C 4180 C304            00304    24          LA    8,BIG             SET TO 99                              00110799            
+000020 FA10 C5BA C292 005BA 00292    25          AP    PPAGE(2),=PL1'1'                                         00110899            
+000026 E000 C5DE 0050 005DE          26          XREAD RECORD,80                                                00110905            
+00002C 4770 C168            00168    27 LOOP1    BNZ   ENDLOOP1                                                 00111005            
+                                     28 *                                                                       00111199            
+000030 D203 C388 C278 00388 00278    29          MVC   OPAGE(4),=X'40202120'                                    00111299            
+000036 DE03 C388 C5BA 00388 005BA    30          ED    OPAGE(4),PPAGE                                           00111399            
+                                     31 *                                                                       00111499            
+00003C 1987                          32          CR    8,7                                                      00111599            
+00003E 4700 C068            00068    33          BC    B'0000',NOHDRS                                           00111699            
+000042 FA10 C5BA C292 005BA 00292    34 HDRS     AP    PPAGE(2),=PL1'1'                                         00111799            
+000048 E020 C308 0085 00308          35          XPRNT TITLE,133        PRINTING                                00111899            
+00004E E020 C38D 0085 0038D          36          XPRNT HEADER1,133                 THE                          00111999            
+000054 E020 C412 0085 00412          37          XPRNT HEADER2,133                    HEADER                    00112099            
+00005A E020 C497 0085 00497          38          XPRNT HEADER3,133                          THING               00112199            
+000060 1B88                          39          SR    8,8                                                      00112299            
+                                     40 *                                                                       00112399            
+000062 1987                          41          CR    8,7                                                      00112599            
+000064 47F0 C068            00068    42          BC    B'1111',NOHDRS                                           00112699            
+000068 FA10 C5A1 C292 005A1 00292    43 NOHDRS   AP    PEMPCTR(2),=PL1'1'   ADD ONE TO THE EMPLOYE COUNT        00112799            
+                                     44 *                                                                       00112905            
+00006E F247 C5A3 C5DE 005A3 005DE    45          PACK  PEMPID(5),IEMPID(8)      PACK THE EMPID                  00113011            
+000074 F224 C5A8 C5E6 005A8 005E6    46          PACK  PHRPAY(3),IHRPAY(5)      PACK THE PAY                    00113134            
+00007A F224 C5AB C5EB 005AB 005EB    47          PACK  PHOURS(3),IHOURS(5)      PACK THE HOURS WORKED           00113234            
+000080 F224 C5AE C5F0 005AE 005F0    48          PACK  PDEDUCT(3),IDEDUCT(5)    PACK THE DEDUCTIONS             00113334            
+000086 F224 C5B1 C5F5 005B1 005F5    49          PACK  PBONUS(3),IBONUS(5)      PACK THE BONUSES                00113434            
+                                     50 *                                                                       00113511            
+                                     51 *****FOR THE EMPLOYEE ID                                                00113632            
+00008C D208 C62E C293 0062E 00293    52          MVC   OEMPID-1(9),=X'212020202020202020'  NAME THE LINE        00113729            
+
+                                                                                                               PAGE    2            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+000092 DE08 C62E C5A3 0062E 005A3    53          ED    OEMPID-1(9),PEMPID      EDIT THE PRINT LINE              00113829            
+000098 92F0 C62E      0062E          54          MVI   DETAIL1,C'0'     REPLACE THE CC                          00113930            
+                                     55 *                                                                       00114030            
+                                     56 *****FOR THE NAME                                                       00114132            
+00009C D218 C640 C5FA 00640 005FA    57          MVC   OEMPNME(25),IEMPNME     MOVE THE NAME IN THE SPOT        00114230            
+                                     58 *                                                                       00114330            
+                                     59 *****FOR THE HOURLY PAY                                                 00114432            
+0000A2 4110 C665            00665    60          LA    1,OHRPAY+3                    JUST IN CASE               00114599            
+0000A6 D206 C662 C29C 00662 0029C    61          MVC   OHRPAY(7),=X'402021204B2020'   EDIT PATTERN              00114699            
+0000AC DF06 C662 C5A8 00662 005A8    62          EDMK  OHRPAY(7),PHRPAY                                         00114733            
+0000B2 0610                          63          BCTR  1,0                            -1 FROM REG 1             00114899            
+0000B4 925B 1000      00000          64          MVI   0(1),C'$'                      PUT THE $ IN              00114999            
+0000B8 92F0 C62E      0062E          65          MVI   DETAIL1,C'0'                   REPLACE CC                00115099            
+                                     66 *                                                                       00115135            
+                                     67 *****FOR THE HOURS WORKED                                               00115235            
+0000BC D205 C673 C2A3 00673 002A3    68          MVC   OHOURS(6),=X'402120204B2020'                             00115399            
+0000C2 DE05 C673 C5AB 00673 005AB    69          ED    OHOURS(6),PHOURS                                         00115435            
+                                     70 *                                                                       00115539            
+                                     71 *****FOR THE DEDUCTION AMOUNT                                           00115639            
+0000C8 FA22 C5BC C5AE 005BC 005AE    72          AP    PDEDTOT(3),PDEDUCT(3)                                    00115777            
+                                     73 *                                                                       00115874            
+0000CE 4110 C685            00685    74          LA    1,ODEDUCT+3                     JUST IN CASE             00115999            
+0000D2 D206 C682 C29C 00682 0029C    75          MVC   ODEDUCT(7),=X'402021204B2020'    EDIT PATTERN            00116099            
+0000D8 DF06 C682 C5AE 00682 005AE    76          EDMK  ODEDUCT(7),PDEDUCT                                       00116139            
+0000DE 0610                          77          BCTR  1,0                              -1 FROM REG 1           00116299            
+0000E0 925B 1000      00000          78          MVI   0(1),C'$'                        PUT THE $ IN            00116399            
+0000E4 92F0 C62E      0062E          79          MVI   DETAIL1,C'0'                     REPLACE CC              00116499            
+                                     80 *                                                                       00116540            
+                                     81 *****FOR THE BONUS AMOUNT                                               00116640            
+0000E8 FA32 C5BF C5B1 005BF 005B1    82          AP    PBONTOT(4),PBONUS(3)                                     00116776            
+                                     83 *                                                                       00116874            
+0000EE 4110 C695            00695    84          LA    1,OBONUS+3                     JUST IN CASE              00116999            
+0000F2 D206 C692 C29C 00692 0029C    85          MVC   OBONUS(7),=X'402021204B2020'    EDIT PATTERN             00117099            
+0000F8 DF06 C692 C5B1 00692 005B1    86          EDMK  OBONUS(7),PBONUS                                         00117140            
+0000FE 0610                          87          BCTR  1,0                             -1 FROM REG 1            00117299            
+000100 925B 1000      00000          88          MVI   0(1),C'$'                       PUT THE $ IN             00117399            
+000104 92F0 C62E      0062E          89          MVI   DETAIL1,C'0'                    REPLACE CC               00117499            
+                                     90 *                                                                       00117544            
+                                     91 *****NOW FOR ALL THE MATHS                                              00117644            
+                                     92 *                                                                       00117744            
+000108 F852 C5B4 C5A8 005B4 005A8    93          ZAP   PAMOUNT(6),PHRPAY(3)       MOVE HRPAY INTO AMOUNT        00117845            
+00010E FC52 C5B4 C5AB 005B4 005AB    94          MP    PAMOUNT(6),PHOURS(3)       AMOUNT * HOURS                00117945            
+000114 F055 C5B4 003E 005B4 0003E    95          SRP   PAMOUNT(6),64-2,5      MOVE THE .S AND ROUND             00118099            
+                                     96 *                                                                       00118186            
+00011A FB52 C5B4 C5AE 005B4 005AE    97          SP    PAMOUNT(6),PDEDUCT(3)      AMOUNT - DEDUCTION            00118286            
+000120 FA52 C5B4 C5B1 005B4 005B1    98          AP    PAMOUNT(6),PBONUS(3)       AMOUNT + BONUS                00118399            
+                                     99 *                                                                       00118446            
+000126 F055 C5B4 0004 005B4 00004   100          SRP   PAMOUNT(6),4,5          MOVE THE .S AND ROUND            00118599            
+                                    101 *                                                                       00118699            
+00012C FA55 C5C3 C5B4 005C3 005B4   102          AP    PAMTTOT(6),PAMOUNT(6)   ADD PERSON AMOUNT TO TOTAL       00118799            
+                                    103 *                                                                       00118899            
+000132 4110 C6AD            006AD   104          LA    1,OAMOUNT+5                   JUST IN CASE               00118999            
+000136 D209 C6A8 C27C 006A8 0027C   105          MVC   OAMOUNT(10),=X'4020206B2021204B2020' EDIT PATTERN        00119099            
+00013C DF09 C6A8 C5B4 006A8 005B4   106          EDMK  OAMOUNT(10),PAMOUNT                                      00119146            
+000142 0610                         107          BCTR  1,0                    -1 FROM REG 1                     00119299            
+000144 925B 1000      00000         108          MVI   0(1),C'$'              ADDING THE $ IN FRONT             00119346            
+000148 92F0 C62E      0062E         109          MVI   DETAIL1,C'0'           PUTTING THE CC BACK               00119446            
+
+                                                                                                               PAGE    3            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+                                    110 *                                                                       00119544            
+                                    111 *****FOR PRINTING IT ALL OUT                                            00119632            
+                                    112 *                                                                       00119799            
+00014C D203 C388 C278 00388 00278   113          MVC   OPAGE(4),=X'40202120'                                    00119899            
+000152 DE03 C388 C5BA 00388 005BA   114          ED    OPAGE(4),PPAGE                                           00119999            
+                                    115 *                                                                       00120099            
+                                    116 *        CR    8,7                                                      00121099            
+                                    117 *        BC    B'0100',NOHDRS                                           00121199            
+                                    118 *DRS     AP    PPAGE(2),=PL1'1'                                         00121299            
+                                    119 *        XPRNT TITLE,133        PRINTING                                00121399            
+                                    120 *        XPRNT HEADER1,133                 THE                          00121499            
+                                    121 *        XPRNT HEADER2,133                    HEADER                    00121599            
+                                    122 *        XPRNT HEADER3,133                          THING               00121699            
+                                    123 *        SR    8,8                                                      00121799            
+                                    124 *                                                                       00121899            
+                                    125 *        CR    8,7                                                      00121999            
+                                    126 *        BC    B'1111',NOHDRS                                           00122099            
+                                    127 *OHDRS   AP    PEMPCTR(2),=PL1'1'   ADD ONE TO THE EMPLOYE COUNT        00122199            
+000158 E020 C62E 0085 0062E         128          XPRNT DETAIL1,133                                              00122299            
+                                    129 *                                                                       00122305            
+00015E E000 C5DE 0050 005DE         130          XREAD RECORD,80                                                00122406            
+000164 47F0 C02C            0002C   131          B     LOOP1                                                    00122506            
+000168                              132 ENDLOOP1 DS    0H                                                       00122606            
+000168 E020 C51C 0085 0051C         133          XPRNT HEADER4,133      THE HYPHENS AT THE BOTTOM               00122799            
+00016E D203 C6C6 C278 006C6 00278   134          MVC   OEMPCTR(4),=X'40202120'   EDIT PATTERN                   00122899            
+000174 DE03 C6C6 C5A1 006C6 005A1   135          ED    OEMPCTR(4),PEMPCTR                                       00122999            
+                                    136 *                                                                       00123074            
+00017A 4110 C70A            0070A   137          LA    1,ODEDTOT+3                    JUST IN CASE              00123199            
+00017E D206 C707 C268 00707 00268   138          MVC   ODEDTOT(7),=X'402021204B202020' EDIT PATTERN             00123299            
+000184 DF06 C707 C5BC 00707 005BC   139          EDMK  ODEDTOT(7),PDEDTOT                                       00123399            
+00018A 0610                         140          BCTR  1,0                             -1 FROM REG 1            00123499            
+00018C 925B 1000      00000         141          MVI   0(1),C'$'                       PUT THE $ IN             00123599            
+000190 92F0 C6B3      006B3         142          MVI   TOTALS,C'0'                     REPLACE CC               00123699            
+                                    143 *                                                                       00123799            
+000194 4110 C71A            0071A   144          LA    1,OBONTOT+5                      JUST IN CASE            00123899            
+000198 D208 C715 C2AA 00715 002AA   145          MVC   OBONTOT(9),=X'20206B2021204B2020' EDIT PATTERN           00123999            
+00019E DF08 C715 C5BF 00715 005BF   146          EDMK  OBONTOT(9),PBONTOT                                       00124099            
+0001A4 0610                         147          BCTR  1,0                               -1 FROM REG 1          00124199            
+0001A6 925B 1000      00000         148          MVI   0(1),C'$'                         PUT THE $ IN           00124299            
+0001AA 92F0 C6B3      006B3         149          MVI   TOTALS,C'0'                       REPLACE CC             00124399            
+                                    150 *                                                                       00124499            
+0001AE 4110 C733            00733   151          LA    1,OAMTTOT+5                      JUST IN CASE            00124599            
+0001B2 D208 C72E C2AA 0072E 002AA   152          MVC   OAMTTOT(9),=X'20206B2021204B2020' EDIT PATTERN           00124699            
+0001B8 DF08 C72E C5C3 0072E 005C3   153          EDMK  OAMTTOT(9),PAMTTOT                                       00124799            
+0001BE 0610                         154          BCTR  1,0                               -1 FROM REG 1          00124899            
+0001C0 925B 1000      00000         155          MVI   0(1),C'$'                         PUT THE $ IN           00124999            
+0001C4 92F0 C6B3      006B3         156          MVI   TOTALS,C'0'                       REPLACE CC             00125099            
+                                    157 *                                                                       00125104            
+0001C8 E020 C6B3 0085 006B3         158          XPRNT TOTALS,133                                               00125263            
+                                    159 *                                                                       00125304            
+                                    160 *****THIS IS FOR ASSIGN 9*****                                          00125499            
+0001CE F852 C5C9 C5BC 005C9 005BC   161          ZAP   PAVGDED(6),PDEDTOT(3)                                    00125799            
+0001D4 F050 C5C9 0003 005C9 00003   162          SRP   PAVGDED(6),3,0                                           00125899            
+0001DA FD51 C5C9 C5A1 005C9 005A1   163          DP    PAVGDED(6),PEMPCTR(2)                                    00125999            
+                                    164 *                                                                       00126099            
+0001E0 F863 C5CF C5BF 005CF 005BF   165          ZAP   PAVGBON(7),PBONTOT(4)                                    00126199            
+0001E6 F060 C5CF 0004 005CF 00004   166          SRP   PAVGBON(7),4,0                                           00126299            
+
+                                                                                                               PAGE    4            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+0001EC FD61 C5CF C5A1 005CF 005A1   167          DP    PAVGBON(7),PEMPCTR(2)                                    00126399            
+                                    168 *                                                                       00126499            
+0001F2 F885 C5D5 C5C3 005D5 005C3   169          ZAP   PAVGTOT(9),PAMTTOT(6)                                    00126599            
+0001F8 F080 C5D5 0003 005D5 00003   170          SRP   PAVGTOT(9),3,0                                           00126699            
+0001FE FD81 C5D5 C5A1 005D5 005A1   171          DP    PAVGTOT(9),PEMPCTR(2)                                    00126799            
+                                    172 *                                                                       00126899            
+                                    173 **EDIT PATTERN AND OUTPUT                                               00126999            
+000204 4110 C790            00790   174          LA    1,OAVGDED+3                                              00127099            
+000208 D205 C78D C286 0078D 00286   175          MVC   OAVGDED(6),=X'4021204B2020'                              00127199            
+00020E DF05 C78D C5C9 0078D 005C9   176          EDMK  OAVGDED(6),PAVGDED                                       00127299            
+000214 0610                         177          BCTR  1,0                                                      00127399            
+000216 925B 1000      00000         178          MVI   0(1),C'$'                                                00127499            
+00021A 92F0 C738      00738         179          MVI   AVGS,C'0'                                                00127599            
+                                    180 *                                                                       00127699            
+00021E 4110 C79E            0079E   181          LA    1,OAVGBON+3                                              00127799            
+000222 D206 C79B C28C 0079B 0028C   182          MVC   OAVGBON(7),=X'2021204B2020'                              00127899            
+000228 DF06 C79B C5CF 0079B 005CF   183          EDMK  OAVGBON(7),PAVGBON                                       00127999            
+00022E 0610                         184          BCTR  1,0                                                      00128099            
+000230 925B 1000      00000         185          MVI   0(1),C'$'                                                00128199            
+000234 92F0 C738      00738         186          MVI   AVGS,C'0'                                                00128299            
+                                    187 *                                                                       00128399            
+000238 4110 C7B5            007B5   188          LA    1,OAVGTOT+3                                              00128499            
+00023C D208 C7B2 C270 007B2 00270   189          MVC   OAVGTOT(9),=X'206B2021204B2020'                          00128599            
+000242 DF08 C7B2 C5D5 007B2 005D5   190          EDMK  OAVGTOT(9),PAVGTOT                                       00128699            
+000248 0610                         191          BCTR  1,0                                                      00128799            
+00024A 925B 1000      00000         192          MVI   0(1),C'$'                                                00128899            
+00024E 92F0 C738      00738         193          MVI   AVGS,C'0'                                                00128999            
+                                    194 *                                                                       00129004            
+000252 E020 C738 0085 00738         195          XPRNT AVGS,133                                                 00129199            
+                                    196 *****START OF DON'T TOUCH******                                         00129204            
+000258 1BFF                         197          SR    15,15          R15 = RETURN CODE OF 0                    00129301            
+00025A 58D0 D004            00004   198          L     13,4(,13)      POINT R13 TO CALLER'S SAVE AREA           00129401            
+00025E 58E0 D00C            0000C   199          L     14,12(,13)     RESTORE REGISTER 14                       00129501            
+000262 980C D014            00014   200          LM    0,12,20(13)    RESTORE R0 THRU R12                       00129601            
+000266 07FE                         201          BR    14             RETURN TO CALLER                          00129701            
+                                    202 *****END OF DON'T TOUCH******                                           00129804            
+                                    203 *                                                                       00129901            
+                                    204          LTORG                                                          00130001            
+000268 402021204B202020             205                =X'402021204B202020'                                                         
+000270 206B2021204B2020             206                =X'206B2021204B2020'                                                         
+000278 40202120                     207                =X'40202120'                                                                 
+00027C 4020206B2021204B             208                =X'4020206B2021204B2020'                                                     
+000286 4021204B2020                 209                =X'4021204B2020'                                                             
+00028C 2021204B2020                 210                =X'2021204B2020'                                                             
+000292 1C                           211                =PL1'1'                                                                      
+000293 2120202020202020             212                =X'212020202020202020'                                                       
+00029C 402021204B2020               213                =X'402021204B2020'                                                           
+0002A3 402120204B2020               214                =X'402120204B2020'                                                           
+0002AA 20206B2021204B20             215                =X'20206B2021204B2020'                                                       
+                                    216 ***********************************                                     00130101            
+0002B4                              217 SAVEAREA DS    18F            PROGRAM'S SAVE AREA                       00130201            
+                                    218 *                                                                       00130301            
+0002FC 00000001                     219 LINCTR   DC    F'1'                                                     00130499            
+000300 0000000F                     220 MAX      DC    F'15'                                                    00130599            
+000304 00000063                     221 BIG      DC    F'99'                                                    00130699            
+                                    222 ******HEADERS*******                                                    00130701            
+000308 F0                           223 TITLE    DC    C'0'                                                     00130899            
+
+                                                                                                               PAGE    5            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+000309 4040404040404040             224          DC    54C' '                                                   00130901            
+00033F C5D4D7D3D6E8C5C5             225          DC    C'EMPLOYEE PAYROLL REPORT'                               00131001            
+000356 4040404040404040             226          DC    45C' '                                                   00131199            
+000383 D7C1C7C57A                   227          DC    C'PAGE:'                                                 00131299            
+000388                              228 OPAGE    DS    CL4         CHANGE LATER MAYBE                           00131399            
+00038C 40                           229          DC    1C' '                                                    00131499            
+                                    230 *****                                                                   00131501            
+00038D 40                           231 HEADER1  DC    C' '                    1                                00131699            
+00038E C5D4D7D3D6E8C5C5             232          DC    C'EMPLOYEE'             8                                00131799            
+000396 4040404040404040             233          DC    9C' '                   9                                00131899            
+00039F C5D4D7D3D6E8C5C5             234          DC    C'EMPLOYEE'             8                                00131999            
+0003A7 4040404040404040             235          DC    27C' '                   27                              00132099            
+0003C2 C8D6E4D9D3E8                 236          DC    C'HOURLY'               6                                00132199            
+0003C8 4040404040404040             237          DC    11C' '                  11                               00132299            
+0003D3 C8D6E4D9E2                   238          DC    C'HOURS'                 5                               00132399            
+0003D8 40404040404040               239          DC    7C' '                    7                               00132499            
+0003DF C4C5C4E4C3E3C9D6             240          DC    C'DEDUCTION'             9                               00132599            
+0003E8 4040404040404040             241          DC    11C' '                   11                              00132699            
+0003F3 C2D6D5E4E2                   242          DC    C'BONUS'                  5                              00132799            
+0003F8 4040404040404040             243          DC    8C' '                     8                              00132899            
+000400 C5D4D7D3D6E8C5C5             244          DC    C'EMPLOYEE PAYCHECK'      17                             00132999            
+000411 40                           245          DC    1C' '                     1                              00133099            
+                                    246 *****                                                                   00133101            
+000412 40                           247 HEADER2  DC    C' '                                      1              00133299            
+000413 C9C4                         248          DC    C'ID'            EMPLOYEE ID              2              00133399            
+000415 4040404040404040             249          DC    15C' '                                    15             00133499            
+000424 D5C1D4C5                     250          DC    C'NAME'          EMPLOYEE NAME             4             00133599            
+000428 4040404040404040             251          DC    29C' '                                    29             00133699            
+000445 D7C1E840D9C1E3C5             252          DC    C'PAY RATE'      PAY RATE                  8             00133799            
+00044D 4040404040404040             253          DC    10C' '                                    10             00133899            
+000457 E6D6D9D2C5C4                 254          DC    C'WORKED'        HOURS WORKED             6              00133999            
+00045D 4040404040404040             255          DC    10C' '                                    10             00134099            
+000467 C1D4D6E4D5E3                 256          DC    C'AMOUNT'        DEDUCTION AMOUNT         6              00134199            
+00046D 4040404040404040             257          DC    10C' '                                    10             00134299            
+000477 C1D4D6E4D5E3                 258          DC    C'AMOUNT'        BONUS AMOUNT              6             00134399            
+00047D 4040404040404040             259          DC    19C' '                                    19             00134499            
+000490 C1D4D6E4D5E3                 260          DC    C'AMOUNT'        EMPLOYEE PAYCHECK AMOUNT  6             00134599            
+000496 40                           261          DC    1C' '                                                    00134699            
+                                    262 *****                                                                   00134701            
+000497 40                           263 HEADER3  DC    C' '                                                     00134801            
+000498 6060606060606060             264          DC    8C'-'            EMPLOYEE ID                             00134901            
+0004A0 4040404040404040             265          DC    9C' '                                                    00135001            
+0004A9 6060606060606060             266          DC    25C'-'           EMPLOYEE NAME                           00135101            
+0004C2 4040404040404040             267          DC    8C' '                                                    00135201            
+0004CA 6060606060606060             268          DC    8C'-'            HOURLY PAY RATE                         00135301            
+0004D2 4040404040404040             269          DC    9C' '                                                    00135401            
+0004DB 60606060606060               270          DC    7C'-'            HOURS WORKED                            00135501            
+0004E2 404040404040                 271          DC    6C' '                                                    00135601            
+0004E8 6060606060606060             272          DC    10C'-'           DEDUCTION AMOUNT                        00135701            
+0004F2 404040404040                 273          DC    6C' '                                                    00135801            
+0004F8 6060606060606060             274          DC    10C'-'           BONUS AMOUNT                            00135901            
+000502 40404040404040               275          DC    7C' '                                                    00136001            
+000509 6060606060606060             276          DC    18C'-'           EMPLOYEE PAYCHECK AMOUNT                00136101            
+00051B 40                           277          DC    1C' '                                                    00136299            
+                                    278 *****                                                                   00136399            
+00051C F0                           279 HEADER4  DC    C'0'                                                     00136499            
+00051D 6060606060606060             280          DC    8C'-'            EMPLOYEE ID                             00136599            
+
+                                                                                                               PAGE    6            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+000525 4040404040404040             281          DC    9C' '                                                    00136699            
+00052E 6060606060606060             282          DC    25C'-'           EMPLOYEE NAME                           00136799            
+000547 4040404040404040             283          DC    16C' '                                                   00136899            
+000557 4040404040404040             284          DC    9C' '                                                    00136999            
+000560 4040404040404040             285          DC    13C' '                                                   00137099            
+00056D 6060606060606060             286          DC    10C'-'           DEDUCTION AMOUNT                        00137199            
+000577 404040404040                 287          DC    6C' '                                                    00137299            
+00057D 6060606060606060             288          DC    10C'-'           BONUS AMOUNT                            00137399            
+000587 40404040404040               289          DC    7C' '                                                    00137499            
+00058E 6060606060606060             290          DC    18C'-'           EMPLOYEE PAYCHECK AMOUNT                00137599            
+0005A0 40                           291          DC    1C' '                                                    00137699            
+                                    292 *****                                                                   00137799            
+                                    293 *****PACKED STORAGE*****                                                00137806            
+0005A1 000C                         294 PEMPCTR  DC    PL2'0'           COUNTER FOR THE EMPLOYEES               00137906            
+0005A3 000000000C                   295 PEMPID   DC    PL5'0'           PACKED EMPLOYEE ID                      00138006            
+0005A8 00000C                       296 PHRPAY   DC    PL3'0'           PACKED HOURLY PAY                       00138106            
+0005AB 00000C                       297 PHOURS   DC    PL3'0'           PACKED HOURS                            00138206            
+0005AE 00000C                       298 PDEDUCT  DC    PL3'0'           PACKED DEDUCTIONS                       00138306            
+0005B1 00000C                       299 PBONUS   DC    PL3'0'           PACKED BONUS                            00138406            
+0005B4 00000000000C                 300 PAMOUNT  DC    PL6'0'           PACKED FINAL AMOUNT                     00138544            
+0005BA 000C                         301 PPAGE    DC    PL2'0'           PAGE COUNTER                            00138699            
+                                    302 *****                                                                   00138774            
+0005BC 00000C                       303 PDEDTOT  DC    PL3'0'           PACKED TOTAL DEDUCTIONS                 00138874            
+0005BF 0000000C                     304 PBONTOT  DC    PL4'0'           PACKED TOTAL BONUSES                    00138974            
+0005C3 00000000000C                 305 PAMTTOT  DC    PL6'0'           PACKED TOTAL TOTAL AMOUNT               00139099            
+                                    306 *****                                                                   00139199            
+0005C9 00000000000C                 307 PAVGDED  DC    PL6'0'     PROBABLY                                      00139299            
+0005CF 00000000000C                 308 PAVGBON  DC    PL6'0'              WILL                                 00139399            
+0005D5 000000000000000C             309 PAVGTOT  DC    PL8'0'                  CHANGE NUMBERS                   00139499            
+                                    310 *****INPUT STORAGE******                                                00139506            
+0005DE                              311 RECORD   DS    0H                                                       00139601            
+0005DE                              312 IEMPID   DS    ZL8              EMPLOYEE ID                             00139707            
+0005E6                              313 IHRPAY   DS    ZL5              HOUR PAY                                00139807            
+0005EB                              314 IHOURS   DS    ZL5              HOURS WORKED                            00139907            
+0005F0                              315 IDEDUCT  DS    ZL5              DEDUCTIONS                              00140007            
+0005F5                              316 IBONUS   DS    ZL5              BONUSES                                 00140107            
+0005FA                              317 IEMPNME  DS    CL25             EMPLOYEE NAME                           00140207            
+000613                              318          DS    CL27                                                     00140301            
+                                    319 *****OUTPUT STORAGE*****                                                00140407            
+00062E F0                           320 DETAIL1  DC    C'0'                                                     00140507            
+00062F                              321 OEMPID   DS    CL8              OUTPUT EMPLOYEE ID                      00140629            
+000637 4040404040404040             322          DC    9C' '                                                    00140718            
+000640                              323 OEMPNME  DS    CL25             OUTPUT EMPLOYEE NAME                    00140807            
+000659 4040404040404040             324          DC    9C' '                                                    00140919            
+000662                              325 OHRPAY   DS    CL7              OUTPUT HOUR PAY                         00141007            
+000669 4040404040404040             326          DC    10C' '                                                   00141119            
+000673                              327 OHOURS   DS    CL6              OUTPUT HOURS                            00141207            
+000679 4040404040404040             328          DC    9C' '                                                    00141320            
+000682                              329 ODEDUCT  DS    CL7              OUTPUT DEDUCTIONS                       00141407            
+000689 4040404040404040             330          DC    9C' '                                                    00141521            
+000692                              331 OBONUS   DS    CL7              OUTPUT BONUS                            00141607            
+000699 4040404040404040             332          DC    15C' '                                                   00141724            
+0006A8                              333 OAMOUNT  DS    CL10             OUTPUT TOTAL AMOUNT PER PERSON          00141807            
+0006B2 40                           334          DC    1C' '                                                    00141924            
+                                    335 *****                                                                   00142060            
+0006B3 F0                           336 TOTALS   DC    C'0'                                                     00142160            
+0006B4 40                           337          DC    C' '                                                     00142260            
+
+                                                                                                               PAGE    7            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+0006B5 E3D6E3C1D3E27A               338          DC    C'TOTALS:'                                               00142360            
+0006BC 4040404040404040             339          DC    10C' '                                                   00142468            
+0006C6                              340 OEMPCTR  DS    CL4              EMPLOYEE COUNTER                        00142599            
+0006CA 40C5D4D7D3D6E8C5             341          DC    C' EMPLOYEE(S)'                                          00142660            
+0006D6 4040404040404040             342          DC    49C' '                                                   00142799            
+000707                              343 ODEDTOT  DS    CL7              DEDUCTED TOTAL AMOUNT                   00142899            
+00070E 40404040404040               344          DC    7C' '                                                    00142999            
+000715                              345 OBONTOT  DS    CL9              BONUS TOTAL                             00143099            
+00071E 4040404040404040             346          DC    16C' '                                                   00143199            
+00072E                              347 OAMTTOT  DS    CL9              TOTAL AMOUNT                            00143299            
+000737 40                           348          DC    1C' '                                                    00143399            
+                                    349 *****                                                                   00143499            
+000738 F0                           350 AVGS     DC    C'0'                                                     00143599            
+000739 C1E5C5D9C1C7C5E2             351          DC    C'AVERAGES:'                                             00143699            
+000742 4040404040404040             352          DC    75C' '                                                   00143799            
+00078D                              353 OAVGDED  DS    CL6           AVERAGE OF DEDUCTIONS                      00143899            
+000793 4040404040404040             354          DC    8C' '                                                    00143999            
+00079B                              355 OAVGBON  DS    CL7           AVERAGE OF BONSUES                         00144099            
+0007A2 4040404040404040             356          DC    16C' '                                                   00144199            
+0007B2                              357 OAVGTOT  DS    CL9           AVERAGE OF TOTAL TOTALS                    00144299            
+0007BB 4040404040                   358          DC    5C' '                                                    00144399            
+                                    359 **********************************                                      00144401            
+                                    360          END   ASSIGN9                                                  00144599            
+
+***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS                                                                         
+
+*** DYNAMIC CORE AREA USED:  LOW:   22192 HIGH:    1736 LEAVING:  469640 FREE BYTES. AVERAGE:       66 BYTES/STMT ***               
+
+*** ASSEMBLY TIME =    0.002 SECS,   180500 STATEMENTS/SEC ***                                                                      
+
+*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***                          
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:   1 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+02345245         JOAN TOWER                         $15.25            80.5          $25.10         $500.22                $1,702.75 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:   2 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+03456322         WOLFGANG AMADEUS MOZART            $19.00            80.7           $0.00          $13.44                $1,547.69 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:   3 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+04032233         RICHARD STRAUSS                    $10.29            80.0          $31.23         $254.00                $1,045.97 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:   4 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+06465120         AMY BEACH                          $22.00            80.0          $15.09         $900.25                $2,645.16 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:   5 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+06560023         DAME ETHEL SMYTHE                  $23.75            28.2          $34.15          $70.85                  $707.64 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:   6 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+13870322         PETER ILYICH TCHAIKOVSKY           $22.95            80.5          $21.25           $0.00                $1,826.23 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:   7 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+14966277         ANTON BRUCKNER                     $20.20            78.6           $0.79         $210.23                $1,798.57 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:   8 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+33345245         JOAN TOWER                         $15.25            80.5          $25.10         $500.22                $1,702.75 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:   9 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+03456422         WOLFGANG AMADEUS MOZART            $19.00            80.7           $0.00          $13.44                $1,547.69 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  10 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+04232233         RICHARD STRAUSS                    $10.29            80.0          $31.23         $254.00                $1,045.97 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  11 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+06466120         AMY BEACH                          $22.00            80.0          $15.09         $900.25                $2,645.16 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  12 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+06550023         DAME ETHEL SMYTHE                  $23.75            28.2          $34.15          $70.85                  $707.64 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  13 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+13899322         PETER ILYICH TCHAIKOVSKY           $22.95            80.5          $21.25           $0.00                $1,826.23 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  14 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+94966277         ANTON BRUCKNER                     $20.20            78.6           $0.79         $210.23                $1,798.57 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  15 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+02348245         JOAN TOWER                         $15.25            80.5          $25.10         $500.22                $1,702.75 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  16 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+13456322         WOLFGANG AMADEUS MOZART            $19.00            80.7           $0.00          $13.44                $1,547.69 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  17 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+34032233         RICHARD STRAUSS                    $10.29            80.0          $31.23         $254.00                $1,045.97 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  18 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+46465120         AMY BEACH                          $22.00            80.0          $15.09         $900.25                $2,645.16 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  19 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+36560023         DAME ETHEL SMYTHE                  $23.75            28.2          $34.15          $70.85                  $707.64 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  20 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+13870432         PETER ILYICH TCHAIKOVSKY           $22.95            80.5          $21.25           $0.00                $1,826.23 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  21 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+14963277         ANTON BRUCKNER                     $20.20            78.6           $0.79         $210.23                $1,798.57 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  22 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+02344245         JOAN TOWER                         $15.25            80.5          $25.10         $500.22                $1,702.75 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  23 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+03446327         WOLFGANG AMADEUS MOZART            $19.00            80.7           $0.00          $13.44                $1,547.69 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  24 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+04033233         RICHARD STRAUSS                    $10.29            80.0          $31.23         $254.00                $1,045.97 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  25 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+01465120         AMY BEACH                          $22.00            80.0          $15.09         $900.25                $2,645.16 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  26 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+01560023         DAME ETHEL SMYTHE                  $23.75            28.2          $34.15          $70.85                  $707.64 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  27 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+13370322         PETER ILYICH TCHAIKOVSKY           $22.95            80.5          $21.25           $0.00                $1,826.23 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  28 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+24966277         ANTON BRUCKNER                     $20.20            78.6           $0.79         $210.23                $1,798.57 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  29 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+02233245         JOAN TOWER                         $15.25            80.5          $25.10         $500.22                $1,702.75 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  30 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+03452322         WOLFGANG AMADEUS MOZART            $19.00            80.7           $0.00          $13.44                $1,547.69 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  31 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+02235533         RICHARD STRAUSS                    $10.29            80.0          $31.23         $254.00                $1,045.97 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  32 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+06455660         AMY BEACH                          $22.00            80.0          $15.09         $900.25                $2,645.16 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  33 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+06564453         DAME ETHEL SMYTHE                  $23.75            28.2          $34.15          $70.85                  $707.64 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  34 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+13873322         PETER ILYICH TCHAIKOVSKY           $22.95            80.5          $21.25           $0.00                $1,826.23 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  35 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+14964377         ANTON BRUCKNER                     $20.20            78.6           $0.79         $210.23                $1,798.57 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  36 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+02222245         JOAN TOWER                         $15.25            80.5          $25.10         $500.22                $1,702.75 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  37 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+03454367         WOLFGANG AMADEUS MOZART            $19.00            80.7           $0.00          $13.44                $1,547.69 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  38 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+04882233         RICHARD STRAUSS                    $10.29            80.0          $31.23         $254.00                $1,045.97 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  39 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+06865120         AMY BEACH                          $22.00            80.0          $15.09         $900.25                $2,645.16 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  40 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+08560023         DAME ETHEL SMYTHE                  $23.75            28.2          $34.15          $70.85                  $707.64 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  41 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+83870322         PETER ILYICH TCHAIKOVSKY           $22.95            80.5          $21.25           $0.00                $1,826.23 
+
+                                                      EMPLOYEE PAYROLL REPORT                                             PAGE:  42 
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+17966277         ANTON BRUCKNER                     $20.20            78.6           $0.79         $210.23                $1,798.57 
+
+--------         -------------------------                                      ----------      ----------       ------------------ 
+
+ TOTALS:            42 EMPLOYEE(S)                                                 $765.66      $11,693.94               $67,644.06 
+
+AVERAGES:                                                                           $18.23       $278.42               $1,610.57   
+
+*** EXECUTION TIME =    0.003 SECS.      2714 INSTRUCTIONS EXECUTED -   904666 INSTRUCTIONS/SEC ***                                 
+
+*** AM004 - NORMAL USER TERMINATION BY RETURN ***                                                                                   
+!! END OF JES SPOOL FILE !!

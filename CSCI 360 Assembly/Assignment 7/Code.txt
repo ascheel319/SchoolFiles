@@ -1,0 +1,156 @@
+//KC03J06A JOB ,'ANDREW SCHEEL' ,MSGCLASS=H                    
+//JSTEP01  EXEC PGM=ASSIST                                     
+//STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR              
+//SYSPRINT DD SYSOUT=*                                         
+//SYSIN    DD *                                                
+***************************************************************
+*ASSIGNMENT 6 - MULTIPLCATION & DIVISION                       
+*DUE DATE - 10/20/18                                           
+***************************************************************
+MAIN     CSECT                                                 
+         USING MAIN,15                                         
+         SR    2,2                COUNTER FOR NUM OF EMPLOYEES 
+         SR    10,10              TOTAL BONUSES RUNNING TOTAL  
+         SR    11,11              TOTAL GROSS PAY RUNNING TOTAL
+         XPRNT HEADER1,133        THE TITLE                    
+         XPRNT COLUMNS,133        THE COLUMN NAMES             
+         XPRNT HYPHENS,133        LINE OF HYPHENS              
+         XREAD BUFFER,80                                       
+LOOP1    BC    B'0100',ENDLOOP1                             
+         LA    2,1(,2)            ADD 1 TO THE COUNTER      
+***********************INPUT********************************
+         XDECI 3,BUFFER                                     
+         XDECO 3,EMPID            EMPLOYEE ID               
+         XDECI 4,0(,1)                                      
+         XDECO 4,HOURRATE         HOUR PAY RATE             
+         XDECI 5,0(,1)                                      
+         XDECO 5,WORKHOUR         HOURS WORKED              
+         XDECI 6,0(,1)                                      
+         XDECO 6,NEGPAY           NEGATIVE PAY              
+         XDECI 7,0(,1)                                      
+         XDECO 7,BONUS            BONUSES                   
+         MVC   NAME(25),BUFFER+24     GRABS THE NAME        
+***********************CALCULATIONS*************************
+         SR    8,8                ZERO OUT REG 8            
+         LR    8,4                LOAD THE HOUR RATE INTO 8 
+         MR    4,8                HOUR RATE * HOURS WORKED  
+         SR    5,6                ^^ - DEDUCTION AMOUNT      
+         AR    5,7                ^^ + BONUS                 
+         XDECO 5,PERGROS          SEND IT OUT                
+************************PRINT STUFF************************  
+         XPRNT OUTLINE,133        PRINT OUT THE LINES        
+*                                                            
+         AR    10,7               TOTAL BONUSES              
+         AR    11,5               TOTAL GROSS                
+         XREAD BUFFER,80                                     
+         BC    B'1111',LOOP1                                 
+ENDLOOP1 XDECO 2,EMPCNT           PUT THE COUNTER INTO EMPCNT
+*                                                            
+************************AFTER LOOP CALCS*******************  
+****OUTPUTVARIABLES                                          
+         XDECO 10,TOTBON          OUTPUT 10 INTO TOTBON      
+         XDECO 11,TOTPAY          OUTPUT 11 INTO TOTPAY      
+****AVERAGE GROSS PAY                                        
+         SR    8,8                ZERO OUT REG 8...AGAIN     
+         XDECI 9,TOTPAY           GRAB THE TOTAL PAY INTO 9    
+         M     8,=F'1'            EXTEND THE BIT               
+         DR    8,2                TOTAL PAY / COUNTER          
+         XDECO 9,AVGPAY           OUTPUT ^^                    
+************************PRINT THE REPORTS******************    
+         XPRNT HYPHEN2,133                                     
+         XPRNT NEWRPT1,133        THIS WAS THE ONLY WAY I COULD
+         XPRNT NEWRPT2,133                                     
+*                                                              
+         BCR   B'1111',14                                      
+         LTORG                                                 
+*                                                              
+BUFFER   DS    CL80                                            
+**********************                                         
+OUTLINE  DC    C'0'                                            
+         DC    C' '                                            
+NAME     DS    CL25               NAME                         
+         DC    5C' '                                           
+EMPID    DS    CL12               EMPLOYEE ID              
+         DC    5C' '                                       
+HOURRATE DS    CL12               HOURLY RATE OF PAY       
+         DC    8C' '                                       
+WORKHOUR DS    CL12               HOURS WORKED             
+         DC    7C' '                                       
+NEGPAY   DS    CL12               DEDUCTED AMOUNT          
+         DC    4C' '                                       
+BONUS    DS    CL12               BONUS                    
+         DC    6C' '                                       
+PERGROS  DS    CL12               GROSS AMOUNT FOR 1 PERSON
+*        DC    2C' '                                       
+**********************                                     
+NEWRPT1  DC    C'0'                                        
+         DC    10C' '                                      
+         DC    C'TOTAL EMPLOYEE COUNT:'                    
+EMPCNT   DS    CL12                                        
+         DC    32C' '                                      
+         DC    C'TOTAL BONUSES AND GROSS PAY:'           
+TOTBON   DS    CL12                                      
+         DC    5C' '         CHANGE THIS NUMBER AS NEEDED
+TOTPAY   DS    CL12                                      
+**********************                                   
+NEWRPT2  DC    C'0'                                      
+         DC    85C' '                                    
+         DC    C'AVERAGE GROSS PAY:'                     
+         DC    18C' '                                    
+AVGPAY   DS    CL12                                      
+**********************                                   
+HEADER1  DC    C'1'                                      
+         DC    55C' '                                    
+         DC    C'EMPLOYEE PAYROLL REPORT'                
+         DC    54C' '                                    
+**********************                                   
+COLUMNS  DC    C' '                                      
+         DC    C'EMPLOYEE NAME'                        
+         DC    19C' '                  
+         DC    C'EMPLOYEE ID'          
+         DC    10C' '                  
+         DC    C'PAY RATE'             
+         DC    8C' '                   
+         DC    C'HOURS WORKED'         
+         DC    8C' '                   
+         DC    C'DEDUCTIONS'           
+         DC    11C' '                  
+         DC    C'BONUS'                
+         DC    8C' '                   
+         DC    C'GROSS PAY'            
+************************               
+HYPHENS  DC    C' '                    
+         DC    22C'-'     EMPLOYEE NAME
+         DC    10C' '                  
+         DC    11C'-'     EMPLOYEE ID  
+         DC    6C' '                   		 
+         DC    12C'-'     PAY RATE    
+         DC    8C' '                  
+         DC    12C'-'     HOURS WORKED
+         DC    6C' '                  
+         DC    12C'-'     DEDUCTIONS  
+         DC    4C' '                  
+         DC    12C'-'     BONUS       
+         DC    5C' '                  
+         DC    12C'-'     GROSS PAY   
+*************************             
+HYPHEN2  DC    C' '                   
+         DC    104C' '                
+         DC    12C'-'                 
+         DC    5C' '                  
+         DC    12C'-'                 
+         END MAIN                     
+/*                                    
+//*                                   
+//FT05F001 DD DSN=KC02322.CSCI360.DATAFA18(DATA6),DISP=SHR
+//*                                                       
+//FT06F001 DD SYSOUT=*                                    
+12345 15 80 25 500      JOAN TOWER                        
+23456 19 80 00 010      WOLFGANG AMADEUS MOZART           
+22132 10 80 31 200      RICHARD STRAUSS                   
+65465 22 80 15 900      AMY BEACH                         
+44560 23 28 34 070      DAME ETHEL SMYTHE                 
+99870 22 80 21 000      PETER ILYICH TCHAIKOVSKY          
+14966 20 78 00 210      ANTON BRUCKNER                    
+//SYSPRINT DD SYSOUT=*                                    
+//                                                        

@@ -1,0 +1,396 @@
+                    J E S 2  J O B  L O G  --  S Y S T E M  S 0 W 1  --  N O D E  Z O S K C T R         
+
+ 
+17.19.27 JOB07304 ---- MONDAY,    19 NOV 2018 ----
+17.19.27 JOB07304  IRR010I  USERID KC03J06  IS ASSIGNED TO THIS JOB.
+17.19.27 JOB07304  ICH70001I KC03J06  LAST ACCESS AT 17:17:17 ON MONDAY, NOVEMBER 19, 2018
+17.19.27 JOB07304  $HASP373 KC03J06A STARTED - INIT 2    - CLASS A        - SYS S0W1
+17.19.27 JOB07304  -                                         --TIMINGS (MINS.)--            ----PAGING COUNTS---
+17.19.27 JOB07304  -JOBNAME  STEPNAME PROCSTEP    RC   EXCP    TCB    SRB  CLOCK   SERV  PG   PAGE   SWAP    VIO SWAPS
+17.19.27 JOB07304  -KC03J06A                      00     57 ******    .00     .0    198   0      0      0      0     0
+17.19.27 JOB07304  -KC03J06A ENDED.  NAME-ANDREW SCHEEL        TOTAL TCB CPU TIME=   .00  TOTAL ELAPSED TIME=    .0
+17.19.27 JOB07304  $HASP395 KC03J06A ENDED
+
+------ JES2 JOB STATISTICS ------
+
+
+  19 NOV 2018 JOB EXECUTION DATE
+
+
+          272 CARDS READ
+
+
+          350 SYSOUT PRINT RECORDS
+
+
+            0 SYSOUT PUNCH RECORDS
+
+
+           40 SYSOUT SPOOL KBYTES
+
+
+         0.00 MINUTES EXECUTION TIME
+!! END OF JES SPOOL FILE !!
+       1 //KC03J06A JOB ,'ANDREW SCHEEL' ,MSGCLASS=H                             JOB07304
+       2 //JSTEP01  EXEC PGM=ASSIST                                              00020001
+       3 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR                       00030001
+       4 //SYSPRINT DD SYSOUT=*                                                  00040001
+       5 //SYSIN    DD *                                                         00050001
+         //*                                                                     00150031
+       6 //FT05F001 DD DSN=KC02322.CSCI360.DATAFA18(DATA8),DISP=SHR              01430031
+         //*                                                                     01440031
+       7 //FT06F001 DD SYSOUT=*                                                  01450031
+!! END OF JES SPOOL FILE !!
+ICH70001I KC03J06  LAST ACCESS AT 17:17:17 ON MONDAY, NOVEMBER 19, 2018
+IEF236I ALLOC. FOR KC03J06A JSTEP01
+IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+IEF237I JES2 ALLOCATED TO SYSPRINT
+IEF237I JES2 ALLOCATED TO SYSIN
+IGD103I SMS ALLOCATED TO DDNAME FT05F001
+IEF237I JES2 ALLOCATED TO FT06F001
+IEF142I KC03J06A JSTEP01 - STEP WAS EXECUTED - COND CODE 0000
+IGD104I KC00NIU.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB 
+IEF285I   KC03J06.KC03J06A.JOB07304.D0000102.?         SYSOUT        
+IEF285I   KC03J06.KC03J06A.JOB07304.D0000101.?         SYSIN         
+IGD104I KC02322.CSCI360.DATAFA18                     RETAINED,  DDNAME=FT05F001
+IEF285I   KC03J06.KC03J06A.JOB07304.D0000103.?         SYSOUT        
+IEF373I STEP/JSTEP01 /START 2018323.1719
+IEF032I STEP/JSTEP01 /STOP  2018323.1719 
+        CPU:     0 HR  00 MIN  00.01 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+        VIRT:   584K  SYS:   268K  EXT:        0K  SYS:    11860K
+        ATB- REAL:                    12K  SLOTS:                     0K
+             VIRT- ALLOC:       2M SHRD:       0M
+IEF375I  JOB/KC03J06A/START 2018323.1719
+IEF033I  JOB/KC03J06A/STOP  2018323.1719 
+        CPU:     0 HR  00 MIN  00.01 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+!! END OF JES SPOOL FILE !!
+
+*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT            
+
+                                                                                                                                    
+
+                                                                                                               PAGE    1            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+                                      1 *************************************************                       00060001            
+                                      2 *                                               *                       00070001            
+                                      3 * INTRODUCTION TO PACKED DECIMAL     11/16/2018 *                       00080001            
+                                      4 *                                               *                       00090001            
+                                      5 *************************************************                       00100001            
+000000                                6 ASSIGN8  CSECT                                                          00101001            
+000000 90EC D00C            0000C     7          STM   14,12,12(13)   SAVE REGS IN CALLER'S SAVE AREA           00102001            
+000004 18CF                           8          LR    12,15          COPY CSECT ADDRESS INTO R12               00103001            
+000000                                9          USING ASSIGN8,12     ESTABLISH R12 AS THE BASE REG             00104001            
+000006 41E0 C1D8            001D8    10          LA    14,SAVEAREA    R14 POINTS TO THIS CSECT'S SAVE AREA      00105001            
+00000A 50E0 D008            00008    11          ST    14,8(,13)      STORE ADDRESS OF THIS CSECT'S SAVE AREA   00106001            
+00000E 50D0 E004            00004    12          ST    13,4(,14)      STORE ADDRESS OF CALLER'S SAVE AREA       00107001            
+000012 18DE                          13          LR    13,14          POINT R13 AT THIS CSECT'S SAVE AREA       00108001            
+                                     14 *                                                                       00109001            
+                                     15 *  HERE IS WHERE YOU WILL WRITE YOUR PROGRAM. OF COURSE, THERE WILL BE  00109101            
+                                     16 *  STORAGE THAT YOU DECLARE BELOW BETWEEN THE SAVEAREA LABEL AND THE    00109201            
+                                     17 *  END STATEMENT. YOU WILL ALSO NEED TO ADD THE JCL ABOVE THE CSECT     00109301            
+                                     18 *  AND BELOW THE END STATEMENT. YOU CAN ALSO GET RID OF THE DOC BOX     00109401            
+                                     19 *  ABOVE.                                                               00109501            
+                                     20 *                                                                       00109601            
+000014 E020 C220 0085 00220          21          XPRNT TITLE,133        PRINTING                                00109704            
+00001A E020 C2A5 0085 002A5          22          XPRNT HEADER1,133                 THE                          00109904            
+000020 E020 C32A 0085 0032A          23          XPRNT HEADER2,133                    HEADER                    00110104            
+000026 E020 C3AF 0085 003AF          24          XPRNT HEADER3,133                          THING               00110204            
+                                     25 *                                                                       00110304            
+00002C E000 C4E0 0050 004E0          26          XREAD RECORD,80                                                00110405            
+000032 4770 C12A            0012A    27 LOOP1    BNZ   ENDLOOP1                                                 00110505            
+000036 FA10 C4B9 C1B6 004B9 001B6    28          AP    PEMPCTR(2),=PL1'1'   ADD ONE TO THE EMPLOYE COUNT        00110606            
+                                     29 *                                                                       00110705            
+00003C F247 C4BB C4E0 004BB 004E0    30          PACK  PEMPID(5),IEMPID(8)      PACK THE EMPID                  00110811            
+000042 F224 C4C0 C4E8 004C0 004E8    31          PACK  PHRPAY(3),IHRPAY(5)      PACK THE PAY                    00110934            
+000048 F224 C4C3 C4ED 004C3 004ED    32          PACK  PHOURS(3),IHOURS(5)      PACK THE HOURS WORKED           00111034            
+00004E F224 C4C6 C4F2 004C6 004F2    33          PACK  PDEDUCT(3),IDEDUCT(5)    PACK THE DEDUCTIONS             00111134            
+000054 F224 C4C9 C4F7 004C9 004F7    34          PACK  PBONUS(3),IBONUS(5)      PACK THE BONUSES                00111234            
+                                     35 *                                                                       00111311            
+                                     36 *****FOR THE EMPLOYEE ID                                                00111432            
+00005A D208 C530 C1B7 00530 001B7    37          MVC   OEMPID-1(9),=X'212020202020202020'  NAME THE LINE        00111529            
+000060 DE08 C530 C4BB 00530 004BB    38          ED    OEMPID-1(9),PEMPID      EDIT THE PRINT LINE              00111629            
+000066 92F0 C530      00530          39          MVI   DETAIL1,C'0'     REPLACE THE CC                          00111730            
+                                     40 *                                                                       00111830            
+                                     41 *****FOR THE NAME                                                       00111932            
+00006A D218 C542 C4FC 00542 004FC    42          MVC   OEMPNME(25),IEMPNME     MOVE THE NAME IN THE SPOT        00112030            
+                                     43 *                                                                       00112130            
+                                     44 *****FOR THE HOURLY PAY                                                 00112232            
+000070 4110 C567            00567    45          LA    1,OHRPAY+3                    JUST IN CASE               00112399            
+000074 D206 C564 C1C0 00564 001C0    46          MVC   OHRPAY(7),=X'402021204B2020'   EDIT PATTERN              00112499            
+00007A DF06 C564 C4C0 00564 004C0    47          EDMK  OHRPAY(7),PHRPAY                                         00112533            
+000080 0610                          48          BCTR  1,0                            -1 FROM REG 1             00112699            
+000082 925B 1000      00000          49          MVI   0(1),C'$'                      PUT THE $ IN              00112799            
+000086 92F0 C530      00530          50          MVI   DETAIL1,C'0'                   REPLACE CC                00112899            
+                                     51 *                                                                       00112935            
+                                     52 *****FOR THE HOURS WORKED                                               00113035            
+
+                                                                                                               PAGE    2            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+00008A D205 C575 C1C7 00575 001C7    53          MVC   OHOURS(6),=X'402120204B2020'                             00113199            
+000090 DE05 C575 C4C3 00575 004C3    54          ED    OHOURS(6),PHOURS                                         00113235            
+                                     55 *                                                                       00113339            
+                                     56 *****FOR THE DEDUCTION AMOUNT                                           00113439            
+000096 FA22 C4D2 C4C6 004D2 004C6    57          AP    PDEDTOT(3),PDEDUCT(3)                                    00113577            
+                                     58 *                                                                       00113774            
+00009C 4110 C587            00587    59          LA    1,ODEDUCT+3                     JUST IN CASE             00113899            
+0000A0 D206 C584 C1C0 00584 001C0    60          MVC   ODEDUCT(7),=X'402021204B2020'    EDIT PATTERN            00113999            
+0000A6 DF06 C584 C4C6 00584 004C6    61          EDMK  ODEDUCT(7),PDEDUCT                                       00114039            
+0000AC 0610                          62          BCTR  1,0                              -1 FROM REG 1           00114199            
+0000AE 925B 1000      00000          63          MVI   0(1),C'$'                        PUT THE $ IN            00114299            
+0000B2 92F0 C530      00530          64          MVI   DETAIL1,C'0'                     REPLACE CC              00114399            
+                                     65 *                                                                       00114440            
+                                     66 *****FOR THE BONUS AMOUNT                                               00114540            
+0000B6 FA32 C4D5 C4C9 004D5 004C9    67          AP    PBONTOT(4),PBONUS(3)                                     00114676            
+                                     68 *                                                                       00114774            
+0000BC 4110 C597            00597    69          LA    1,OBONUS+3                     JUST IN CASE              00114899            
+0000C0 D206 C594 C1C0 00594 001C0    70          MVC   OBONUS(7),=X'402021204B2020'    EDIT PATTERN             00114999            
+0000C6 DF06 C594 C4C9 00594 004C9    71          EDMK  OBONUS(7),PBONUS                                         00115040            
+0000CC 0610                          72          BCTR  1,0                             -1 FROM REG 1            00115199            
+0000CE 925B 1000      00000          73          MVI   0(1),C'$'                       PUT THE $ IN             00115299            
+0000D2 92F0 C530      00530          74          MVI   DETAIL1,C'0'                    REPLACE CC               00115399            
+                                     75 *                                                                       00115444            
+                                     76 *****NOW FOR ALL THE MATHS                                              00115544            
+                                     77 *                                                                       00115644            
+0000D6 F852 C4CC C4C0 004CC 004C0    78          ZAP   PAMOUNT(6),PHRPAY(3)       MOVE HRPAY INTO AMOUNT        00115745            
+0000DC FC52 C4CC C4C3 004CC 004C3    79          MP    PAMOUNT(6),PHOURS(3)       AMOUNT * HOURS                00115845            
+0000E2 F055 C4CC 003E 004CC 0003E    80          SRP   PAMOUNT(6),64-2,5      MOVE THE .S AND ROUND             00115999            
+                                     81 *                                                                       00116086            
+0000E8 FB52 C4CC C4C6 004CC 004C6    82          SP    PAMOUNT(6),PDEDUCT(3)      AMOUNT - DEDUCTION            00116286            
+0000EE FA52 C4CC C4C9 004CC 004C9    83          AP    PAMOUNT(6),PBONUS(3)       AMOUNT + BONUS                00116499            
+                                     84 *                                                                       00116546            
+0000F4 F055 C4CC 0004 004CC 00004    85          SRP   PAMOUNT(6),4,5          MOVE THE .S AND ROUND            00116699            
+                                     86 *                                                                       00116799            
+0000FA FA55 C4D9 C4CC 004D9 004CC    87          AP    PAMTTOT(6),PAMOUNT(6)   ADD PERSON AMOUNT TO TOTAL       00116899            
+                                     88 *                                                                       00116999            
+000100 4110 C5AF            005AF    89          LA    1,OAMOUNT+5                   JUST IN CASE               00117099            
+000104 D209 C5AA C1AC 005AA 001AC    90          MVC   OAMOUNT(10),=X'4020206B2021204B2020' EDIT PATTERN        00117199            
+00010A DF09 C5AA C4CC 005AA 004CC    91          EDMK  OAMOUNT(10),PAMOUNT                                      00117246            
+000110 0610                          92          BCTR  1,0                    -1 FROM REG 1                     00117399            
+000112 925B 1000      00000          93          MVI   0(1),C'$'              ADDING THE $ IN FRONT             00117446            
+000116 92F0 C530      00530          94          MVI   DETAIL1,C'0'           PUTTING THE CC BACK               00117546            
+                                     95 *                                                                       00117644            
+                                     96 *****FOR PRINTING IT ALL OUT                                            00117732            
+00011A E020 C530 0085 00530          97          XPRNT DETAIL1,133      PRINT EVERYTHING                        00117811            
+                                     98 *                                                                       00117905            
+000120 E000 C4E0 0050 004E0          99          XREAD RECORD,80                                                00118006            
+000126 47F0 C032            00032   100          B     LOOP1                                                    00118106            
+00012A                              101 ENDLOOP1 DS    0H                                                       00118206            
+00012A E020 C434 0085 00434         102          XPRNT HEADER4,133      THE HYPHENS AT THE BOTTOM               00118399            
+000130 D203 C5C8 C1A8 005C8 001A8   103          MVC   OEMPCTR(4),=X'40202120'   EDIT PATTERN                   00118499            
+000136 DE03 C5C8 C4B9 005C8 004B9   104          ED    OEMPCTR(4),PEMPCTR                                       00118599            
+                                    105 *                                                                       00118674            
+00013C 4110 C60C            0060C   106          LA    1,ODEDTOT+3                    JUST IN CASE              00118799            
+000140 D206 C609 C1A0 00609 001A0   107          MVC   ODEDTOT(7),=X'402021204B202020' EDIT PATTERN             00118899            
+000146 DF06 C609 C4D2 00609 004D2   108          EDMK  ODEDTOT(7),PDEDTOT                                       00118999            
+00014C 0610                         109          BCTR  1,0                             -1 FROM REG 1            00119099            
+
+                                                                                                               PAGE    3            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+00014E 925B 1000      00000         110          MVI   0(1),C'$'                       PUT THE $ IN             00119199            
+000152 92F0 C5B5      005B5         111          MVI   TOTALS,C'0'                     REPLACE CC               00119299            
+                                    112 *                                                                       00119399            
+000156 4110 C61C            0061C   113          LA    1,OBONTOT+5                      JUST IN CASE            00119599            
+00015A D208 C617 C1CE 00617 001CE   114          MVC   OBONTOT(9),=X'20206B2021204B2020' EDIT PATTERN           00119699            
+000160 DF08 C617 C4D5 00617 004D5   115          EDMK  OBONTOT(9),PBONTOT                                       00119799            
+000166 0610                         116          BCTR  1,0                               -1 FROM REG 1          00119899            
+000168 925B 1000      00000         117          MVI   0(1),C'$'                         PUT THE $ IN           00119999            
+00016C 92F0 C5B5      005B5         118          MVI   TOTALS,C'0'                       REPLACE CC             00120099            
+                                    119 *                                                                       00120199            
+000170 4110 C635            00635   120          LA    1,OAMTTOT+5                      JUST IN CASE            00120299            
+000174 D208 C630 C1CE 00630 001CE   121          MVC   OAMTTOT(9),=X'20206B2021204B2020' EDIT PATTERN           00120399            
+00017A DF08 C630 C4D9 00630 004D9   122          EDMK  OAMTTOT(9),PAMTTOT                                       00120499            
+000180 0610                         123          BCTR  1,0                               -1 FROM REG 1          00120599            
+000182 925B 1000      00000         124          MVI   0(1),C'$'                         PUT THE $ IN           00120699            
+000186 92F0 C5B5      005B5         125          MVI   TOTALS,C'0'                       REPLACE CC             00120799            
+                                    126 *                                                                       00120804            
+00018A E020 C5B5 0085 005B5         127          XPRNT TOTALS,133                                               00120963            
+                                    128 *                                                                       00121004            
+                                    129 *                                                                       00121104            
+                                    130 *****START OF DON'T TOUCH******                                         00121204            
+000190 1BFF                         131          SR    15,15          R15 = RETURN CODE OF 0                    00121301            
+000192 58D0 D004            00004   132          L     13,4(,13)      POINT R13 TO CALLER'S SAVE AREA           00121401            
+000196 58E0 D00C            0000C   133          L     14,12(,13)     RESTORE REGISTER 14                       00121501            
+00019A 980C D014            00014   134          LM    0,12,20(13)    RESTORE R0 THRU R12                       00121601            
+00019E 07FE                         135          BR    14             RETURN TO CALLER                          00121701            
+                                    136 *****END OF DON'T TOUCH******                                           00121804            
+                                    137 *                                                                       00121901            
+                                    138          LTORG                                                          00122001            
+0001A0 402021204B202020             139                =X'402021204B202020'                                                         
+0001A8 40202120                     140                =X'40202120'                                                                 
+0001AC 4020206B2021204B             141                =X'4020206B2021204B2020'                                                     
+0001B6 1C                           142                =PL1'1'                                                                      
+0001B7 2120202020202020             143                =X'212020202020202020'                                                       
+0001C0 402021204B2020               144                =X'402021204B2020'                                                           
+0001C7 402120204B2020               145                =X'402120204B2020'                                                           
+0001CE 20206B2021204B20             146                =X'20206B2021204B2020'                                                       
+                                    147 ***********************************                                     00122101            
+0001D8                              148 SAVEAREA DS    18F            PROGRAM'S SAVE AREA                       00122201            
+                                    149 *                                                                       00122301            
+                                    150 ******HEADERS*******                                                    00122401            
+000220 F0                           151 TITLE    DC    C'0'                                                     00122599            
+000221 4040404040404040             152          DC    54C' '                                                   00122601            
+000257 C5D4D7D3D6E8C5C5             153          DC    C'EMPLOYEE PAYROLL REPORT'                               00122701            
+00026E 4040404040404040             154          DC    55C' '                                                   00122801            
+                                    155 *****                                                                   00123201            
+0002A5 40                           156 HEADER1  DC    C' '                    1                                00123399            
+0002A6 C5D4D7D3D6E8C5C5             157          DC    C'EMPLOYEE'             8                                00123499            
+0002AE 4040404040404040             158          DC    9C' '                   9                                00123599            
+0002B7 C5D4D7D3D6E8C5C5             159          DC    C'EMPLOYEE'             8                                00123699            
+0002BF 4040404040404040             160          DC    27C' '                   27                              00123799            
+0002DA C8D6E4D9D3E8                 161          DC    C'HOURLY'               6                                00123899            
+0002E0 4040404040404040             162          DC    11C' '                  11                               00123999            
+0002EB C8D6E4D9E2                   163          DC    C'HOURS'                 5                               00124099            
+0002F0 40404040404040               164          DC    7C' '                    7                               00124199            
+0002F7 C4C5C4E4C3E3C9D6             165          DC    C'DEDUCTION'             9                               00124299            
+000300 4040404040404040             166          DC    11C' '                   11                              00124399            
+
+                                                                                                               PAGE    4            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+00030B C2D6D5E4E2                   167          DC    C'BONUS'                  5                              00124499            
+000310 4040404040404040             168          DC    8C' '                     8                              00124599            
+000318 C5D4D7D3D6E8C5C5             169          DC    C'EMPLOYEE PAYCHECK'      17                             00124699            
+000329 40                           170          DC    1C' '                     1                              00124799            
+                                    171 *****                                                                   00124801            
+00032A 40                           172 HEADER2  DC    C' '                                      1              00124999            
+00032B C9C4                         173          DC    C'ID'            EMPLOYEE ID              2              00125099            
+00032D 4040404040404040             174          DC    15C' '                                    15             00125199            
+00033C D5C1D4C5                     175          DC    C'NAME'          EMPLOYEE NAME             4             00125299            
+000340 4040404040404040             176          DC    29C' '                                    29             00125399            
+00035D D7C1E840D9C1E3C5             177          DC    C'PAY RATE'      PAY RATE                  8             00125499            
+000365 4040404040404040             178          DC    10C' '                                    10             00125599            
+00036F E6D6D9D2C5C4                 179          DC    C'WORKED'        HOURS WORKED             6              00125699            
+000375 4040404040404040             180          DC    10C' '                                    10             00125799            
+00037F C1D4D6E4D5E3                 181          DC    C'AMOUNT'        DEDUCTION AMOUNT         6              00125899            
+000385 4040404040404040             182          DC    10C' '                                    10             00125999            
+00038F C1D4D6E4D5E3                 183          DC    C'AMOUNT'        BONUS AMOUNT              6             00126099            
+000395 4040404040404040             184          DC    19C' '                                    19             00126199            
+0003A8 C1D4D6E4D5E3                 185          DC    C'AMOUNT'        EMPLOYEE PAYCHECK AMOUNT  6             00126299            
+0003AE 40                           186          DC    1C' '                                                    00126399            
+                                    187 *****                                                                   00126401            
+0003AF 40                           188 HEADER3  DC    C' '                                                     00126501            
+0003B0 6060606060606060             189          DC    8C'-'            EMPLOYEE ID                             00126601            
+0003B8 4040404040404040             190          DC    9C' '                                                    00126701            
+0003C1 6060606060606060             191          DC    25C'-'           EMPLOYEE NAME                           00126801            
+0003DA 4040404040404040             192          DC    8C' '                                                    00126901            
+0003E2 6060606060606060             193          DC    8C'-'            HOURLY PAY RATE                         00127001            
+0003EA 4040404040404040             194          DC    9C' '                                                    00127101            
+0003F3 60606060606060               195          DC    7C'-'            HOURS WORKED                            00127201            
+0003FA 404040404040                 196          DC    6C' '                                                    00127301            
+000400 6060606060606060             197          DC    10C'-'           DEDUCTION AMOUNT                        00127401            
+00040A 404040404040                 198          DC    6C' '                                                    00127501            
+000410 6060606060606060             199          DC    10C'-'           BONUS AMOUNT                            00127601            
+00041A 40404040404040               200          DC    7C' '                                                    00127701            
+000421 6060606060606060             201          DC    18C'-'           EMPLOYEE PAYCHECK AMOUNT                00127801            
+000433 40                           202          DC    1C' '                                                    00127999            
+                                    203 *****                                                                   00128099            
+000434 F0                           204 HEADER4  DC    C'0'                                                     00128199            
+000435 6060606060606060             205          DC    8C'-'            EMPLOYEE ID                             00128299            
+00043D 4040404040404040             206          DC    9C' '                                                    00128399            
+000446 6060606060606060             207          DC    25C'-'           EMPLOYEE NAME                           00128499            
+00045F 4040404040404040             208          DC    16C' '                                                   00128599            
+00046F 4040404040404040             209          DC    9C' '                                                    00128699            
+000478 4040404040404040             210          DC    13C' '                                                   00128799            
+000485 6060606060606060             211          DC    10C'-'           DEDUCTION AMOUNT                        00128899            
+00048F 404040404040                 212          DC    6C' '                                                    00128999            
+000495 6060606060606060             213          DC    10C'-'           BONUS AMOUNT                            00129099            
+00049F 40404040404040               214          DC    7C' '                                                    00129199            
+0004A6 6060606060606060             215          DC    18C'-'           EMPLOYEE PAYCHECK AMOUNT                00129299            
+0004B8 40                           216          DC    1C' '                                                    00129399            
+                                    217 *****                                                                   00129499            
+                                    218 *****PACKED STORAGE*****                                                00129506            
+0004B9 000C                         219 PEMPCTR  DC    PL2'0'           COUNTER FOR THE EMPLOYEES               00129606            
+0004BB 000000000C                   220 PEMPID   DC    PL5'0'           PACKED EMPLOYEE ID                      00129706            
+0004C0 00000C                       221 PHRPAY   DC    PL3'0'           PACKED HOURLY PAY                       00129806            
+0004C3 00000C                       222 PHOURS   DC    PL3'0'           PACKED HOURS                            00129906            
+0004C6 00000C                       223 PDEDUCT  DC    PL3'0'           PACKED DEDUCTIONS                       00130006            
+
+                                                                                                               PAGE    5            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+0004C9 00000C                       224 PBONUS   DC    PL3'0'           PACKED BONUS                            00130106            
+0004CC 00000000000C                 225 PAMOUNT  DC    PL6'0'           PACKED FINAL AMOUNT                     00130244            
+                                    226 *****                                                                   00130374            
+0004D2 00000C                       227 PDEDTOT  DC    PL3'0'           PACKED TOTAL DEDUCTIONS                 00130474            
+0004D5 0000000C                     228 PBONTOT  DC    PL4'0'           PACKED TOTAL BONUSES                    00130574            
+0004D9 00000000000C                 229 PAMTTOT  DC    PL6'0'           PACKED TOTAL TOTAL AMOUNT               00130699            
+                                    230 *****INPUT STORAGE******                                                00130706            
+0004E0                              231 RECORD   DS    0H                                                       00130801            
+0004E0                              232 IEMPID   DS    ZL8              EMPLOYEE ID                             00130907            
+0004E8                              233 IHRPAY   DS    ZL5              HOUR PAY                                00131007            
+0004ED                              234 IHOURS   DS    ZL5              HOURS WORKED                            00131107            
+0004F2                              235 IDEDUCT  DS    ZL5              DEDUCTIONS                              00131207            
+0004F7                              236 IBONUS   DS    ZL5              BONUSES                                 00131307            
+0004FC                              237 IEMPNME  DS    CL25             EMPLOYEE NAME                           00131407            
+000515                              238          DS    CL27                                                     00131501            
+                                    239 *****OUTPUT STORAGE*****                                                00131607            
+000530 F0                           240 DETAIL1  DC    C'0'                                                     00131707            
+000531                              241 OEMPID   DS    CL8              OUTPUT EMPLOYEE ID                      00131829            
+000539 4040404040404040             242          DC    9C' '                                                    00131918            
+000542                              243 OEMPNME  DS    CL25             OUTPUT EMPLOYEE NAME                    00132007            
+00055B 4040404040404040             244          DC    9C' '                                                    00132119            
+000564                              245 OHRPAY   DS    CL7              OUTPUT HOUR PAY                         00132207            
+00056B 4040404040404040             246          DC    10C' '                                                   00132319            
+000575                              247 OHOURS   DS    CL6              OUTPUT HOURS                            00132407            
+00057B 4040404040404040             248          DC    9C' '                                                    00132520            
+000584                              249 ODEDUCT  DS    CL7              OUTPUT DEDUCTIONS                       00132607            
+00058B 4040404040404040             250          DC    9C' '                                                    00132721            
+000594                              251 OBONUS   DS    CL7              OUTPUT BONUS                            00132807            
+00059B 4040404040404040             252          DC    15C' '                                                   00132924            
+0005AA                              253 OAMOUNT  DS    CL10             OUTPUT TOTAL AMOUNT PER PERSON          00133007            
+0005B4 40                           254          DC    1C' '                                                    00133124            
+                                    255 *****                                                                   00133260            
+0005B5 F0                           256 TOTALS   DC    C'0'                                                     00133360            
+0005B6 40                           257          DC    C' '                                                     00133460            
+0005B7 E3D6E3C1D3E27A               258          DC    C'TOTALS:'                                               00133560            
+0005BE 4040404040404040             259          DC    10C' '                                                   00133668            
+0005C8                              260 OEMPCTR  DS    CL4              EMPLOYEE COUNTER                        00133799            
+0005CC 40C5D4D7D3D6E8C5             261          DC    C' EMPLOYEE(S)'                                          00133860            
+0005D8 4040404040404040             262          DC    49C' '                                                   00133999            
+000609                              263 ODEDTOT  DS    CL7              DEDUCTED TOTAL AMOUNT                   00134099            
+000610 40404040404040               264          DC    7C' '                                                    00134199            
+000617                              265 OBONTOT  DS    CL9              BONUS TOTAL                             00134299            
+000620 4040404040404040             266          DC    16C' '                                                   00134399            
+000630                              267 OAMTTOT  DS    CL9              TOTAL AMOUNT                            00134499            
+000639 40                           268          DC    1C' '                                                    00134599            
+                                    269 **********************************                                      00134601            
+                                    270          END   ASSIGN8                                                  00135001            
+
+***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS                                                                         
+
+*** DYNAMIC CORE AREA USED:  LOW:   17436 HIGH:    1372 LEAVING:  474760 FREE BYTES. AVERAGE:       69 BYTES/STMT ***               
+
+*** ASSEMBLY TIME =    0.001 SECS,   271000 STATEMENTS/SEC ***                                                                      
+
+*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***                          
+
+                                                      EMPLOYEE PAYROLL REPORT                                                       
+EMPLOYEE         EMPLOYEE                           HOURLY           HOURS       DEDUCTION           BONUS        EMPLOYEE PAYCHECK 
+ID               NAME                             PAY RATE          WORKED          AMOUNT          AMOUNT                   AMOUNT 
+--------         -------------------------        --------         -------      ----------      ----------       ------------------ 
+
+02345245         JOAN TOWER                         $15.25            80.5          $25.10         $500.22                $1,702.75 
+
+03456322         WOLFGANG AMADEUS MOZART            $19.00            80.7           $0.00          $13.44                $1,547.69 
+
+04032233         RICHARD STRAUSS                    $10.29            80.0          $31.23         $254.00                $1,045.97 
+
+06465120         AMY BEACH                          $22.00            80.0          $15.09         $900.25                $2,645.16 
+
+06560023         DAME ETHEL SMYTHE                  $23.75            28.2          $34.15          $70.85                  $707.64 
+
+13870322         PETER ILYICH TCHAIKOVSKY           $22.95            80.5          $21.25           $0.00                $1,826.23 
+
+14966277         ANTON BRUCKNER                     $20.20            78.6           $0.79         $210.23                $1,798.57 
+
+--------         -------------------------                                      ----------      ----------       ------------------ 
+
+ TOTALS:             7 EMPLOYEE(S)                                                 $127.61       $1,948.99               $11,274.01 
+
+*** EXECUTION TIME =    0.001 SECS.       382 INSTRUCTIONS EXECUTED -   382000 INSTRUCTIONS/SEC ***                                 
+
+*** AM004 - NORMAL USER TERMINATION BY RETURN ***                                                                                   
+!! END OF JES SPOOL FILE !!

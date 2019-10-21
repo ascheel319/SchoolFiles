@@ -1,0 +1,108 @@
+                    J E S 2  J O B  L O G  --  S Y S T E M  S 0 W 1  --  N O D E  Z O S K C T R         
+
+ 
+12.41.57 JOB02371 ---- FRIDAY,    21 SEP 2018 ----
+12.41.57 JOB02371  IRR010I  USERID KC03J06  IS ASSIGNED TO THIS JOB.
+12.41.57 JOB02371  ICH70001I KC03J06  LAST ACCESS AT 12:39:28 ON FRIDAY, SEPTEMBER 21, 2018
+12.41.57 JOB02371  $HASP373 KC03J06A STARTED - INIT 1    - CLASS A        - SYS S0W1
+12.41.57 JOB02371  -                                         --TIMINGS (MINS.)--            ----PAGING COUNTS---
+12.41.57 JOB02371  -JOBNAME  STEPNAME PROCSTEP    RC   EXCP    TCB    SRB  CLOCK   SERV  PG   PAGE   SWAP    VIO SWAPS
+12.41.57 JOB02371  -KC03J06A                      00     36 ******    .00     .0     76   0      0      0      0     0
+12.41.57 JOB02371  -KC03J06A ENDED.  NAME-Andrew Scheel        TOTAL TCB CPU TIME=   .00  TOTAL ELAPSED TIME=    .0
+12.41.57 JOB02371  $HASP395 KC03J06A ENDED
+
+------ JES2 JOB STATISTICS ------
+
+
+  21 SEP 2018 JOB EXECUTION DATE
+
+
+           25 CARDS READ
+
+
+           76 SYSOUT PRINT RECORDS
+
+
+            0 SYSOUT PUNCH RECORDS
+
+
+            6 SYSOUT SPOOL KBYTES
+
+
+         0.00 MINUTES EXECUTION TIME
+!! END OF JES SPOOL FILE !!
+       1 //KC03J06A JOB ,'Andrew Scheel' ,MSGCLASS=H                             JOB02371
+       2 //JSTEP01  EXEC PGM=ASSIST                                              00062001
+       3 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR                       00063001
+       4 //SYSPRINT DD SYSOUT=*                                                  00064001
+       5 //SYSIN    DD *                                                         00065001
+!! END OF JES SPOOL FILE !!
+ICH70001I KC03J06  LAST ACCESS AT 12:39:28 ON FRIDAY, SEPTEMBER 21, 2018
+IEF236I ALLOC. FOR KC03J06A JSTEP01
+IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+IEF237I JES2 ALLOCATED TO SYSPRINT
+IEF237I JES2 ALLOCATED TO SYSIN
+IEF142I KC03J06A JSTEP01 - STEP WAS EXECUTED - COND CODE 0000
+IGD104I KC00NIU.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB 
+IEF285I   KC03J06.KC03J06A.JOB02371.D0000102.?         SYSOUT        
+IEF285I   KC03J06.KC03J06A.JOB02371.D0000101.?         SYSIN         
+IEF373I STEP/JSTEP01 /START 2018264.1241
+IEF032I STEP/JSTEP01 /STOP  2018264.1241 
+        CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+        VIRT:   584K  SYS:   264K  EXT:        0K  SYS:    11776K
+        ATB- REAL:                    12K  SLOTS:                     0K
+             VIRT- ALLOC:       2M SHRD:       0M
+IEF375I  JOB/KC03J06A/START 2018264.1241
+IEF033I  JOB/KC03J06A/STOP  2018264.1241 
+        CPU:     0 HR  00 MIN  00.00 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+!! END OF JES SPOOL FILE !!
+
+*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT            
+
+                                                                                                                                    
+
+                                                                                                               PAGE    1            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+                                      1 ***********************************************************             00066001            
+                                      2 *  ASSIGNMENT 3A- THE SECOND MAINFRAME PROGRAM                          00070000            
+                                      3 *  DUE DATE: 9/21/2018                                                  00080000            
+                                      4 ***********************************************************             00120001            
+000000                                5 MAIN     CSECT               START OF PROGRAM                           00130005            
+000000                                6          USING MAIN,15       SETS 15 TO BE THE BASE                     00140005            
+000000 4120 F020            00020     7          LA    2,NUM1        LOADS NUM1 INTO REG 2                      00150005            
+000004 4130 F024            00024     8          LA    3,NUM2        LOADS NUM2 INTO REG 3                      00151005            
+000008 1B23                           9          SR    2,3           SUBTRACTS 37 FROM  142                     00152004            
+                                     10 *I JUST WANTED TO SPACE IT OUT A LITTLE                                 00153000            
+00000A 4140 F020            00020    11          LA    4,NUM1        LOADS NUM1 INTO REG 4                      00154005            
+00000E 4150 F024            00024    12          LA    5,NUM2        LOADS NUM2 INTO REG 5                      00155005            
+000012 1A45                          13          AR    4,5           ADDS 142 AND 37                            00156004            
+                                     14 *ANOTHER SPACER                                                         00157000            
+000014 E160 0000 0000 00000          15          XDUMP ,             DUMPS STUFF OUT                            00158005            
+00001A 07FE                          16          BR    14            NEEDED DON'T TOUCH                         00160005            
+                                     17          LTORG               STARTS THE STORAGE                         00161005            
+000020 0000008E                      18 NUM1     DC    F'142'        NAMES THE LABEL FOR NUM1                   00162005            
+000024 00000025                      19 NUM2     DC    F'37'         NAMES THE LABEL FOR NUM2                   00163005            
+                                     20          END   MAIN                                                     00170000            
+
+***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS                                                                         
+
+*** DYNAMIC CORE AREA USED:  LOW:    1152 HIGH:     376 LEAVING:  492040 FREE BYTES. AVERAGE:       72 BYTES/STMT ***               
+
+*** ASSEMBLY TIME =    0.000 SECS,    21000 STATEMENTS/SEC ***                                                                      
+
+*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***                          
+
+BEGIN XSNAP - CALL     1 AT E000001A USER REGISTERS                                                                                 
+
+ REGS 0-7      F4F4F4F4    F4F4F4F4    FFFFFFFC    00000024    00000044    00000024    F4F4F4F4    F4F4F4F4                         
+ REGS 8-15     F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4    F4F4F4F4    00000028    FFFE7960    00000000                         
+
+                                                                                                                                    
+
+*** EXECUTION TIME =    0.000 SECS.         8 INSTRUCTIONS EXECUTED -     8000 INSTRUCTIONS/SEC ***                                 
+
+*** FIRST CARD NOT READ: NO CARDS READ:FILE UNOPENED                                                                                
+
+*** AM004 - NORMAL USER TERMINATION BY RETURN ***                                                                                   
+!! END OF JES SPOOL FILE !!

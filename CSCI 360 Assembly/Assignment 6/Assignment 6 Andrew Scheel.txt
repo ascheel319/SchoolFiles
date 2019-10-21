@@ -1,0 +1,222 @@
+                    J E S 2  J O B  L O G  --  S Y S T E M  S 0 W 1  --  N O D E  Z O S K C T R         
+
+ 
+17.38.50 JOB02019 ---- FRIDAY,    19 OCT 2018 ----
+17.38.50 JOB02019  IRR010I  USERID KC03J06  IS ASSIGNED TO THIS JOB.
+17.38.50 JOB02019  ICH70001I KC03J06  LAST ACCESS AT 17:37:25 ON FRIDAY, OCTOBER 19, 2018
+17.38.50 JOB02019  $HASP373 KC03J06A STARTED - INIT 2    - CLASS A        - SYS S0W1
+17.38.50 JOB02019  -                                         --TIMINGS (MINS.)--            ----PAGING COUNTS---
+17.38.50 JOB02019  -JOBNAME  STEPNAME PROCSTEP    RC   EXCP    TCB    SRB  CLOCK   SERV  PG   PAGE   SWAP    VIO SWAPS
+17.38.50 JOB02019  -KC03J06A                      00     57 ******    .00     .0    159   0      0      0      0     0
+17.38.50 JOB02019  -KC03J06A ENDED.  NAME-ANDREW SCHEEL        TOTAL TCB CPU TIME=   .00  TOTAL ELAPSED TIME=    .0
+17.38.50 JOB02019  $HASP395 KC03J06A ENDED
+
+------ JES2 JOB STATISTICS ------
+
+
+  19 OCT 2018 JOB EXECUTION DATE
+
+
+          120 CARDS READ
+
+
+          181 SYSOUT PRINT RECORDS
+
+
+            0 SYSOUT PUNCH RECORDS
+
+
+           19 SYSOUT SPOOL KBYTES
+
+
+         0.00 MINUTES EXECUTION TIME
+!! END OF JES SPOOL FILE !!
+       1 //KC03J06A JOB ,'ANDREW SCHEEL' ,MSGCLASS=H                             JOB02019
+       2 //JSTEP01  EXEC PGM=ASSIST                                              00020000
+       3 //STEPLIB  DD DSN=KC00NIU.ASSIST.LOADLIB,DISP=SHR                       00030000
+       4 //SYSPRINT DD SYSOUT=*                                                  00040000
+       5 //SYSIN    DD *                                                         00050000
+         //*                                                                     00220000
+       6 //FT05F001 DD DSN=KC02322.CSCI360.DATAFA18(DATA6),DISP=SHR              00230000
+         //*                                                                     00240000
+       7 //FT06F001 DD SYSOUT=*                                                  00250000
+       8 //SYSIN     DD *               GENERATED STATEMENT                              
+       9 //SYSPRINT DD SYSOUT=*                                                  00330000
+!! END OF JES SPOOL FILE !!
+ICH70001I KC03J06  LAST ACCESS AT 17:37:25 ON FRIDAY, OCTOBER 19, 2018
+IEF236I ALLOC. FOR KC03J06A JSTEP01
+IGD103I SMS ALLOCATED TO DDNAME STEPLIB
+IEF237I JES2 ALLOCATED TO SYSPRINT
+IEF237I JES2 ALLOCATED TO SYSIN
+IGD103I SMS ALLOCATED TO DDNAME FT05F001
+IEF237I JES2 ALLOCATED TO FT06F001
+IEF237I JES2 ALLOCATED TO SYSIN
+IEF237I JES2 ALLOCATED TO SYSPRINT
+IEF142I KC03J06A JSTEP01 - STEP WAS EXECUTED - COND CODE 0000
+IGD104I KC00NIU.ASSIST.LOADLIB                       RETAINED,  DDNAME=STEPLIB 
+IEF285I   KC03J06.KC03J06A.JOB02019.D0000103.?         SYSOUT        
+IEF285I   KC03J06.KC03J06A.JOB02019.D0000101.?         SYSIN         
+IGD104I KC02322.CSCI360.DATAFA18                     RETAINED,  DDNAME=FT05F001
+IEF285I   KC03J06.KC03J06A.JOB02019.D0000104.?         SYSOUT        
+IEF285I   KC03J06.KC03J06A.JOB02019.D0000102.?         SYSIN         
+IEF285I   KC03J06.KC03J06A.JOB02019.D0000105.?         SYSOUT        
+IEF373I STEP/JSTEP01 /START 2018292.1738
+IEF032I STEP/JSTEP01 /STOP  2018292.1738 
+        CPU:     0 HR  00 MIN  00.01 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+        VIRT:   584K  SYS:   264K  EXT:        0K  SYS:    11420K
+        ATB- REAL:                    12K  SLOTS:                     0K
+             VIRT- ALLOC:       2M SHRD:       0M
+IEF375I  JOB/KC03J06A/START 2018292.1738
+IEF033I  JOB/KC03J06A/STOP  2018292.1738 
+        CPU:     0 HR  00 MIN  00.01 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+!! END OF JES SPOOL FILE !!
+
+*** ASSIST 4.0/A2-05/15/82  470/V7A/0:OS/VS2  INS=SDFP7/X=BGHO, CHECK/TRC/=1180, OPTS=CDKMPR FROM PENN ST*NIU COMPSCI*LT            
+
+                                                                                                                                    
+
+                                                                                                               PAGE    1            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+                                      1 ***************************************************************         00060000            
+                                      2 *ASSIGNMENT 6 - MULTIPLCATION & DIVISION                                00070000            
+                                      3 *DUE DATE - 10/20/18                                                    00080056            
+                                      4 ***************************************************************         00090000            
+000000                                5 MAIN     CSECT                                                          00100000            
+000000                                6          USING MAIN,15                                                  00110000            
+000000 1B22                           7          SR    2,2                COUNTER FOR NUM OF EMPLOYEES          00120001            
+000002 1BAA                           8          SR    10,10              TOTAL BONUSES RUNNING TOTAL           00120142            
+000004 1BBB                           9          SR    11,11              TOTAL GROSS PAY RUNNING TOTAL         00120247            
+000006 E000 F0A4 0050 000A4          10          XREAD BUFFER,80                                                00121001            
+00000C 4740 F064            00064    11 LOOP1    BC    B'0100',ENDLOOP1                                         00122001            
+000010 4120 2001            00001    12          LA    2,1(,2)            ADD 1 TO THE COUNTER                  00130001            
+                                     13 ***********************INPUT********************************            00130107            
+000014 5330 F0A4            000A4    14          XDECI 3,BUFFER                                                 00130201            
+000018 5230 F117            00117    15          XDECO 3,EMPID            EMPLOYEE ID                           00130303            
+00001C 5340 1000            00000    16          XDECI 4,0(,1)                                                  00130401            
+000020 5240 F127            00127    17          XDECO 4,HOURRATE         HOUR PAY RATE                         00130501            
+000024 5350 1000            00000    18          XDECI 5,0(,1)                                                  00130601            
+000028 5250 F137            00137    19          XDECO 5,WORKHOUR         HOURS WORKED                          00130701            
+00002C 5360 1000            00000    20          XDECI 6,0(,1)                                                  00130801            
+000030 5260 F147            00147    21          XDECO 6,NEGPAY           NEGATIVE PAY                          00130901            
+000034 5370 1000            00000    22          XDECI 7,0(,1)                                                  00131005            
+000038 5270 F157            00157    23          XDECO 7,BONUS            BONUSES                               00131105            
+00003C D218 F0FA F0BC 000FA 000BC    24          MVC   NAME(25),BUFFER+24     GRABS THE NAME                    00131201            
+                                     25 ***********************CALCULATIONS*************************            00131307            
+000042 1B88                          26          SR    8,8                ZERO OUT REG 8                        00131452            
+000044 1884                          27          LR    8,4                LOAD THE HOUR RATE INTO 8             00131552            
+000046 1C48                          28          MR    4,8                HOUR RATE * HOURS WORKED              00131742            
+000048 1B56                          29          SR    5,6                ^^ - DEDUCTION AMOUNT                 00131844            
+00004A 1A57                          30          AR    5,7                ^^ + BONUS                            00131952            
+00004C 5250 F167            00167    31          XDECO 5,PERGROS          SEND IT OUT                           00132052            
+                                     32 ************************PRINT STUFF************************             00132431            
+000050 E020 F0F4 0085 000F4          33          XPRNT OUTLINE,133        PRINT OUT THE LINES                   00132552            
+                                     34 *                                                                       00133001            
+000056 1AA7                          35          AR    10,7               TOTAL BONUSES                         00133141            
+000058 1AB5                          36          AR    11,5               TOTAL GROSS                           00133246            
+00005A E000 F0A4 0050 000A4          37          XREAD BUFFER,80                                                00134006            
+000060 47F0 F00C            0000C    38          BC    B'1111',LOOP1                                            00140006            
+000064 5220 F1BF            001BF    39 ENDLOOP1 XDECO 2,EMPCNT           PUT THE COUNTER INTO EMPCNT           00150052            
+                                     40 *                                                                       00160000            
+                                     41 ************************AFTER LOOP CALCS*******************             00160136            
+                                     42 ****OUTPUTVARIABLES                                                     00160251            
+000068 52A0 F244            00244    43          XDECO 10,TOTBON          OUTPUT 10 INTO TOTBON                 00160352            
+00006C 52B0 F2C9            002C9    44          XDECO 11,TOTPAY          OUTPUT 11 INTO TOTPAY                 00160452            
+                                     45 ****AVERAGE GROSS PAY                                                   00160548            
+000070 1B88                          46          SR    8,8                ZERO OUT REG 8...AGAIN                00160652            
+000072 5390 F2C9            002C9    47          XDECI 9,TOTPAY           GRAB THE TOTAL PAY INTO 9             00160752            
+000076 5C80 F0A0            000A0    48          M     8,=F'1'            EXTEND THE BIT                        00160852            
+00007A 1D82                          49          DR    8,2                TOTAL PAY / COUNTER                   00160952            
+00007C 5290 F34E            0034E    50          XDECO 9,AVGPAY           OUTPUT ^^                             00161052            
+                                     51 ************************PRINT THE REPORTS******************             00161433            
+000080 E020 F179 0085 00179          52          XPRNT REPORT1,133        THIS WAS THE ONLY WAY I COULD         00162052            
+
+                                                                                                               PAGE    2            
+
+  LOC  OBJECT CODE    ADDR1 ADDR2  STMT   SOURCE STATEMENT                                                                          
+000086 E020 F1FE 0085 001FE          53          XPRNT REPORT2,133        THINK OF TO MAKE IT ALL ON            00163052            
+00008C E020 F283 0085 00283          54          XPRNT REPORT3,133        NEW LINES...SO HERE IS THE            00164052            
+000092 E020 F308 0085 00308          55          XPRNT REPORT4,133        TOTALS AND AVG                        00165052            
+                                     56 *                                                                       00166033            
+000098 07FE                          57          BCR   B'1111',14                                               00170000            
+                                     58          LTORG                                                          00180000            
+0000A0 00000001                      59                =F'1'                                                                        
+                                     60 *                                                                       00190000            
+0000A4                               61 BUFFER   DS    CL80                                                     00191001            
+                                     62 **********************                                                  00192001            
+0000F4 F0                            63 OUTLINE  DC    C'0'                                                     00193001            
+0000F5 4040404040                    64          DC    5C' '                                                    00194001            
+0000FA                               65 NAME     DS    CL25               NAME                                  00195001            
+000113 40404040                      66          DC    4C' '                                                    00196002            
+000117                               67 EMPID    DS    CL12               EMPLOYEE ID                           00197001            
+000123 40404040                      68          DC    4C' '                                                    00198002            
+000127                               69 HOURRATE DS    CL12               HOURLY RATE OF PAY                    00199001            
+000133 40404040                      70          DC    4C' '                                                    00199102            
+000137                               71 WORKHOUR DS    CL12               HOURS WORKED                          00199201            
+000143 40404040                      72          DC    4C' '                                                    00199302            
+000147                               73 NEGPAY   DS    CL12               DEDUCTED AMOUNT                       00199401            
+000153 40404040                      74          DC    4C' '                                                    00199502            
+000157                               75 BONUS    DS    CL12               BONUS                                 00199601            
+000163 40404040                      76          DC    4C' '                                                    00199702            
+000167                               77 PERGROS  DS    CL12               GROSS AMOUNT FOR 1 PERSON             00199801            
+000173 404040404040                  78          DC    6C' '                                                    00199901            
+                                     79 **********************                                                  00200001            
+000179 F0                            80 REPORT1  DC    C'0'                                                     00200131            
+00017A 4040404040404040              81          DC    48C' '                                                   00200255            
+0001AA D5E4D4C2C5D940D6              82          DC    C'NUMBER OF EMPLOYEES: '                                 00200331            
+0001BF                               83 EMPCNT   DS    CL12               THE EMPLOYEE COUNT                    00200452            
+0001CB 4040404040404040              84          DC    51C' '                                                   00200655            
+                                     85 **********************                                                  00200731            
+0001FE F0                            86 REPORT2  DC    C'0'                                                     00200931            
+0001FF 4040404040404040              87          DC    54C' '                                                   00201053            
+000235 E3D6E3C1D340C2D6              88          DC    C'TOTAL BONUSES: '                                       00201231            
+000244                               89 TOTBON   DS    CL12               TOTAL BONUSES                         00201352            
+000250 4040404040404040              90          DC    51C' '                                                   00201453            
+                                     91 **********************                                                  00201531            
+000283 F0                            92 REPORT3  DC    C'0'                                                     00201631            
+000284 4040404040404040              93          DC    52C' '                                                   00201753            
+0002B8 E3D6E3C1D340C7D9              94          DC    C'TOTAL GROSS PAY: '                                     00201832            
+0002C9                               95 TOTPAY   DS    CL12                                                     00201931            
+0002D5 4040404040404040              96          DC    51C' '             TOTAL GROSS PAY                       00202053            
+                                     97 **********************                                                  00202131            
+000308 F0                            98 REPORT4  DC    C'0'                                                     00202231            
+000309 4040404040404040              99          DC    50C' '                                                   00202331            
+00033B C1E5C5D9C1C7C540             100          DC    C'AVERAGE GROSS PAY: '                                   00202431            
+00034E                              101 AVGPAY   DS    CL12               AVERAGE GROSS PAY                     00202552            
+00035A 4040404040404040             102          DC    51C' '                                                   00202631            
+                                    103          END MAIN                                                       00203000            
+
+***  NO   STATEMENTS FLAGGED -  NO   WARNINGS,  NO   ERRORS                                                                         
+
+*** DYNAMIC CORE AREA USED:  LOW:    6336 HIGH:     740 LEAVING:  486492 FREE BYTES. AVERAGE:       68 BYTES/STMT ***               
+
+*** ASSEMBLY TIME =    0.000 SECS,   104000 STATEMENTS/SEC ***                                                                      
+
+*** PROGRAM EXECUTION BEGINNING - ANY OUTPUT BEFORE EXECUTION TIME MESSAGE IS PRODUCED BY USER PROGRAM ***                          
+
+     JOAN TOWER                          12345              15              80              25             500            1675      
+
+     WOLFGANG AMADEUS MOZART             23456              19              80               0              10            1530      
+
+     RICHARD STRAUSS                     22132              10              80              31             200             969      
+
+     AMY BEACH                           65465              22              80              15             900            2645      
+
+     DAME ETHEL SMYTHE                   44560              23              28              34              70             680      
+
+     PETER ILYICH TCHAIKOVSKY            99870              22              80              21               0            1739      
+
+     ANTON BRUCKNER                      14966              20              78               0             210            1770      
+
+                                                NUMBER OF EMPLOYEES:            7                                                   
+
+                                                      TOTAL BONUSES:         1890                                                   
+
+                                                    TOTAL GROSS PAY:        11008                                                   
+
+                                                  AVERAGE GROSS PAY:         1572                                                   
+
+*** EXECUTION TIME =    0.001 SECS.       186 INSTRUCTIONS EXECUTED -   186000 INSTRUCTIONS/SEC ***                                 
+
+*** AM004 - NORMAL USER TERMINATION BY RETURN ***                                                                                   
+!! END OF JES SPOOL FILE !!
