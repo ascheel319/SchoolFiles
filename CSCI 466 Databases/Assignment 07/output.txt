@@ -1,0 +1,96 @@
+MariaDB [z1790270]> SOURCE assign7.sql;
+Query OK, 0 rows affected (0.13 sec)
+
+Query OK, 0 rows affected (0.07 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.37 sec)
+
+Query OK, 1 row affected (0.06 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.07 sec)
+
+Query OK, 1 row affected (0.09 sec)
+
+Query OK, 1 row affected (0.07 sec)
+
++----+-----------+------------+
+| id | firstname | lastname   |
++----+-----------+------------+
+|  1 | Andrew    | Scheel     |
+|  2 | Clark     | Kent       |
+|  3 | Bruce     | Wayne      |
+|  4 | Barry     | Allen      |
+|  5 | Luke      | Starkiller |
++----+-----------+------------+
+5 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.54 sec)
+
+Query OK, 1 row affected (0.08 sec)
+
+Query OK, 1 row affected (0.08 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
++----+--------+------------+---------+
+| id | name   | dob        | ownerid |
++----+--------+------------+---------+
+|  1 | Krypto | 1955-03-09 |       2 |
+|  2 | BatCow | 2012-07-05 |       3 |
+|  3 | R2D2   | 1977-05-25 |       5 |
+|  4 | C3PO   | 1977-05-25 |       5 |
+|  5 | Tillie | 2010-04-09 |       1 |
++----+--------+------------+---------+
+5 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (1.20 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.08 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 5 rows affected (0.88 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++----+--------+------------+---------+-----------+
+| id | name   | dob        | ownerid | type      |
++----+--------+------------+---------+-----------+
+|  1 | Krypto | 1955-03-09 |       2 | Super Dog |
+|  2 | BatCow | 2012-07-05 |       3 | Cow       |
+|  3 | R2D2   | 1977-05-25 |       5 | Droid     |
+|  4 | C3PO   | 1977-05-25 |       5 | NULL      |
+|  5 | Tillie | 2010-04-09 |       1 | Dog       |
++----+--------+------------+---------+-----------+
+5 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.07 sec)
+
++-----------+------------+--------+
+| FirstName | LastName   | Name   |
++-----------+------------+--------+
+| Clark     | Kent       | Krypto |
+| Bruce     | Wayne      | BatCow |
+| Luke      | Starkiller | R2D2   |
+| Luke      | Starkiller | C3PO   |
+| Andrew    | Scheel     | Tillie |
++-----------+------------+--------+
+5 rows in set (0.00 sec)
+
+MariaDB [z1790270]> \t

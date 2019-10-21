@@ -1,0 +1,167 @@
+Andrew Scheel
+z1790270
+Assignment 9
+section 3
+
+
+
+MariaDB [(none)]> use z1790270;
+Database changed
+MariaDB [z1790270]> create table movie(pk int auto_increment primary key,name char(15));start transaction;insert into movie (name) values('Das Boot');insert into movie (name) values('The Godfather');insert into movie (name) values('Jaws');insert into movie (name) values('The Black Stallion');
+Query OK, 0 rows affected (0.61 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+MariaDB [(none)]> use z1790270;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [z1790270]> select * from movie;
+Empty set (0.00 sec)
+
+MariaDB [z1790270]> insert into movie (name) values('Shrek');insert into movie (name) values('StarTrek');
+Query OK, 1 row affected (0.05 sec)
+
+Query OK, 1 row affected (0.02 sec)
+
+MariaDB [z1790270]> commit;
+Query OK, 0 rows affected (0.05 sec)
+
+MariaDB [z1790270]> select * from movie;
++----+-----------------+
+| pk | name            |
++----+-----------------+
+|  1 | Das Boot        |
+|  2 | The Godfather   |
+|  3 | Jaws            |
+|  4 | The Black Stall |
+|  5 | Shrek           |
+|  6 | StarTrek        |
++----+-----------------+
+6 rows in set (0.00 sec)
+
+MariaDB [z1790270]> \t
+MariaDB [z1790270]> select * from movie;
++----+-----------------+
+| pk | name            |
++----+-----------------+
+|  1 | Das Boot        |
+|  2 | The Godfather   |
+|  3 | Jaws            |
+|  4 | The Black Stall |
+|  5 | Shrek           |
+|  6 | StarTrek        |
++----+-----------------+
+6 rows in set (0.00 sec)
+
+MariaDB [z1790270]> \t
+MariaDB [(none)]> use z1790270;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [z1790270]> start transaction;delete from movie where pk = 3;select * from movie;
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
++----+-----------------+
+| pk | name            |
++----+-----------------+
+|  1 | Das Boot        |
+|  2 | The Godfather   |
+|  4 | The Black Stall |
+|  5 | Shrek           |
+|  6 | StarTrek        |
++----+-----------------+
+5 rows in set (0.00 sec)
+
+MariaDB [z1790270]> Update movie set name = 'Iron Man' where pk = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1790270]> Update movie set name = 'Con Air' where pk = 4;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1790270]> insert into movie (name) values('Grease');select * from movie;
+Query OK, 1 row affected (0.00 sec)
+
++----+----------+
+| pk | name     |
++----+----------+
+|  1 | Das Boot |
+|  2 | Iron Man |
+|  4 | Con Air  |
+|  5 | Shrek    |
+|  6 | StarTrek |
+|  7 | Grease   |
++----+----------+
+6 rows in set (0.10 sec)
+
+MariaDB [z1790270]> rollback;
+Query OK, 0 rows affected (0.02 sec)
+
+MariaDB [z1790270]> select * from movie;
++----+-----------------+
+| pk | name            |
++----+-----------------+
+|  1 | Das Boot        |
+|  2 | The Godfather   |
+|  3 | Jaws            |
+|  4 | The Black Stall |
+|  5 | Shrek           |
+|  6 | StarTrek        |
++----+-----------------+
+6 rows in set (0.00 sec)
+
+MariaDB [z1790270]> \t
+MariaDB [(none)]> use z1790270;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [z1790270]> start transcation;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'transcation' at line 1
+MariaDB [z1790270]> start transaction;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> use z1790270;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [z1790270]> start transaction;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [z1790270]> update movie set name = ‘The Red Shoes’where pk=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Red Shoes’where pk=1' at line 1
+MariaDB [z1790270]> update movie set name = ‘The Red Shoes’ where pk=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'Red Shoes’ where pk=1' at line 1
+MariaDB [z1790270]> UPDATE movie SET NAME = 'The Red Shoes' WHERE pk=1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1790270]> UPDATE movie SET NAME = 'The Graduate' WHERE pk = 5;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1790270]> UPDATE movie SET NAME = 'Shrek 2' WHERE pk=2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1790270]> UPDATE movie SET NAME = 'Dr. StrangeLove' WHERE pk = 6;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [z1790270]> \t
+MariaDB [z1790270]> \t

@@ -1,0 +1,16 @@
+Andrew Scheel
+z1790270
+Assignment 9
+section 3
+
+
+Part 1
+2) Nothing, because the first session has not finished and committed the information to memory yet.
+
+5) It is the same because the first session was closed and committed before the second session's select statement was given.
+
+Part 2
+4) The movies at the position of 2 and 4 were updated to Iron Man and Con Air because they were updated.
+
+5) It is the original list of movies because we started a transaction before we changed the movies so we were able to roll them back to that state.
+

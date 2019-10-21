@@ -1,0 +1,288 @@
+#Andrew Scheel
+#z1790270
+#Section 3
+
+MariaDB [(none)]> USE BabyName;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [BabyName]> SOURCE assign5.sql;
++--------------------+
+| Tables_in_BabyName |
++--------------------+
+| BabyName           |
++--------------------+
+1 row in set (0.00 sec)
+
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| name   | varchar(15) | NO   | PRI | NULL    |       |
+| count  | int(11)     | YES  |     | NULL    |       |
+| gender | char(1)     | NO   | PRI | NULL    |       |
+| year   | smallint(6) | NO   | PRI | NULL    |       |
+| place  | char(2)     | NO   | PRI | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
++------+
+| year |
++------+
+| 1881 |
+| 1886 |
+| 1898 |
+| 1910 |
+| 1911 |
+| 1912 |
+| 1913 |
+| 1914 |
+| 1915 |
+| 1916 |
+| 1917 |
+| 1918 |
+| 1919 |
+| 1920 |
+| 1921 |
+| 1922 |
+| 1923 |
+| 1924 |
+| 1925 |
+| 1926 |
+| 1927 |
+| 1928 |
+| 1929 |
+| 1930 |
+| 1931 |
+| 1932 |
+| 1933 |
+| 1934 |
+| 1935 |
+| 1936 |
+| 1937 |
+| 1938 |
+| 1939 |
+| 1940 |
+| 1941 |
+| 1942 |
+| 1943 |
+| 1944 |
+| 1945 |
+| 1946 |
+| 1947 |
+| 1948 |
+| 1949 |
+| 1950 |
+| 1951 |
+| 1952 |
+| 1953 |
+| 1954 |
+| 1955 |
+| 1956 |
++------+
+50 rows in set (0.00 sec)
+
++--------------+
+| name         |
++--------------+
+| Aadam        |
+| Aadil        |
+| Aaditya      |
+| Aailyah      |
+| Aaisha       |
+| Aajah        |
+| Aakash       |
+| Aalayah      |
+| Aaleah       |
+| Aaleyah      |
+| Aalia        |
+| Aaliah       |
+| Aaliayah     |
+| Aaliya       |
+| Aaliyah      |
+| Aaliyha      |
+| Aalliyah     |
+| Aalyah       |
+| Aalyiah      |
+| Aamina       |
+| Aaminah      |
+| Aamir        |
+| Aanchal      |
+| Aanisah      |
+| Aaniyah      |
+| Aanya        |
+| Aanyah       |
+| Aaran        |
+| Aaren        |
+| Aareon       |
+| Aariana      |
+| Aarianna     |
+| Aaric        |
+| Aariel       |
+| Aarika       |
+| Aarin        |
+| Aarion       |
+| Aariona      |
+| Aarionna     |
+| Aaris        |
+| Aarohi       |
+| Aaron        |
+| Aaronmichael |
+| Aarron       |
+| Aarthi       |
+| Aarti        |
+| Aaryn        |
+| Aasha        |
+| Aashna       |
+| Aasim        |
++--------------+
+50 rows in set (0.00 sec)
+
++-----------+
+| name      |
++-----------+
+| Elizabeth |
++-----------+
+1 row in set (0.00 sec)
+
++------+
+| name |
++------+
+| John |
++------+
+1 row in set (0.00 sec)
+
++-----------+-------+--------+------+-------+
+| name      | count | gender | year | place |
++-----------+-------+--------+------+-------+
+| Anda      |     5 | F      | 1943 | AR    |
+| Anda      |     5 | F      | 1948 | US    |
+| Anda      |     5 | F      | 1950 | US    |
+| Anda      |     5 | F      | 1965 | US    |
+| Anda      |     5 | F      | 1973 | US    |
+| Anda      |     5 | F      | 1983 | US    |
+| Anda      |     5 | F      | 1985 | US    |
+| Anda      |     5 | F      | 1996 | US    |
+| Anda      |     5 | F      | 2012 | US    |
+| Anda      |     5 | F      | 2014 | US    |
+| Anda      |     6 | F      | 1957 | US    |
+| Anda      |     6 | F      | 1962 | US    |
+| Anda      |     6 | F      | 1967 | US    |
+| Anda      |     6 | F      | 1988 | US    |
+| Anda      |     7 | F      | 1959 | US    |
+| Anda      |     7 | F      | 1960 | US    |
+| Anda      |     7 | F      | 1964 | US    |
+| Anda      |     7 | F      | 1970 | US    |
+| Anda      |     7 | F      | 1976 | US    |
+| Anda      |     8 | F      | 1943 | US    |
+| Anda      |     8 | F      | 1947 | US    |
+| Anda      |     8 | F      | 1949 | US    |
+| Anda      |     8 | F      | 1952 | US    |
+| Anda      |     8 | F      | 1953 | US    |
+| Anda      |     8 | F      | 1954 | US    |
+| Anda      |    11 | F      | 1951 | US    |
+| Anda      |    11 | F      | 1956 | US    |
+| Anda      |    12 | F      | 1955 | US    |
+| Andaiye   |     5 | F      | 1975 | US    |
+| Andalasia |     5 | F      | 2009 | US    |
+| Andalasia |     5 | F      | 2010 | US    |
+| Andalasia |     6 | F      | 2008 | US    |
+| Andalasia |     6 | F      | 2011 | US    |
+| Andalucia |     5 | F      | 2008 | US    |
+| Andalucia |     6 | F      | 2015 | US    |
+| Andalyn   |     5 | F      | 2004 | US    |
+| Andalyn   |     5 | F      | 2006 | US    |
+| Andalyn   |     6 | F      | 2011 | US    |
+| Andalyn   |     8 | F      | 2005 | US    |
+| Andalyn   |     8 | F      | 2007 | US    |
+| Andalyn   |     8 | F      | 2014 | US    |
+| Andalyn   |     9 | F      | 2010 | US    |
+| Andalyn   |    10 | F      | 2012 | US    |
+| Andalyn   |    11 | F      | 2015 | US    |
+| Andalyn   |    12 | F      | 2008 | US    |
+| Andalynn  |     5 | F      | 2010 | US    |
+| Andalynn  |     5 | F      | 2013 | US    |
+| Andalynn  |     8 | F      | 2014 | US    |
+| Andamo    |    15 | M      | 1960 | US    |
+| Andan     |     5 | M      | 2003 | US    |
++-----------+-------+--------+------+-------+
+50 rows in set (0.00 sec)
+
++----------+
+| COUNT(*) |
++----------+
+|  7601706 |
++----------+
+1 row in set (0.00 sec)
+
++-------------+
+| COUNT(name) |
++-------------+
+|       64807 |
++-------------+
+1 row in set (0.00 sec)
+
++-------------+
+| COUNT(name) |
++-------------+
+|     3320622 |
++-------------+
+1 row in set (0.00 sec)
+
++-------+-----------+
+| place | name      |
++-------+-----------+
+| US    | Aaban     |
+| NY    | Aaban     |
+| US    | Aabha     |
+| US    | Aabid     |
+| US    | Aabriella |
+| US    | Aada      |
+| US    | Aadam     |
+| US    | Aadan     |
+| CA    | Aadan     |
+| TX    | Aadan     |
+| US    | Aadarsh   |
+| IL    | Aadarsh   |
+| US    | Aaden     |
+| OH    | Aaden     |
+| AL    | Aaden     |
+| AZ    | Aaden     |
+| CA    | Aaden     |
+| CO    | Aaden     |
+| GA    | Aaden     |
+| IL    | Aaden     |
+| NY    | Aaden     |
+| PA    | Aaden     |
+| TN    | Aaden     |
+| TX    | Aaden     |
+| AR    | Aaden     |
+| CT    | Aaden     |
+| FL    | Aaden     |
+| HI    | Aaden     |
+| IA    | Aaden     |
+| IN    | Aaden     |
+| KS    | Aaden     |
+| KY    | Aaden     |
+| LA    | Aaden     |
+| MA    | Aaden     |
+| MD    | Aaden     |
+| MI    | Aaden     |
+| MN    | Aaden     |
+| MO    | Aaden     |
+| MS    | Aaden     |
+| MT    | Aaden     |
+| NC    | Aaden     |
+| ND    | Aaden     |
+| NE    | Aaden     |
+| NJ    | Aaden     |
+| NM    | Aaden     |
+| NV    | Aaden     |
+| OK    | Aaden     |
+| OR    | Aaden     |
+| SC    | Aaden     |
+| SD    | Aaden     |
++-------+-----------+
+50 rows in set (0.00 sec)
+
+MariaDB [BabyName]> \t

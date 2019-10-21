@@ -1,0 +1,115 @@
+Marina: Alexamara East
+        First Name: Bruce and Doris     Last Name: Adney        City: Bowton
+                Boat Name: Anderson II
+                        Description: Air conditioner periodically stops with code indicating low coolant level. Diagnose and repair.
+                        Status: Technician has verified the problem. Air conditioning specialist has been called.
+
+                        Description: Engine oil level has been dropping drastically. Diagnose and repair.
+                        Status: Open
+
+                        Description: Routine engine maintenance
+                        Status: Scheduled
+
+                        Description: Fiberglass repair
+                        Status: Scheduled
+
+                Boat Name: Bravo
+                        Description: Engine overheating. Loss of coolant. Diagnose and repair.
+                        Status: Open
+
+                        Description: Heat exchanger not operating correctly.
+                        Status: Technician has determined that the exchanger is faulty. New exchanger has been ordered.
+
+        First Name: Bill        Last Name: Anderson     City: Glander Bay
+                Boat Name: Our Toy
+                        Description: Install new GPS and chart plotter.
+                        Status: Scheduled
+
+                        Description: Air conditioning unit shuts down with HHH showing on the control panel.
+                        Status: Technician not able to replicate the problem. Air conditioning unit ran fine through multiple tests. Owner to notify technician if the problem recurs.
+
+        First Name: Mary Jane   Last Name: Blake        City: Bowton
+                Boat Name: Escape
+                Boat Name: Krispy
+                        Description: Canvas leaks around zippers in heavy rain. Install overlap around zippers to prevent leaks.
+                        Status: Overlap has been created. Installation has been scheduled.
+
+        First Name: Daniel      Last Name: Feenstra     City: Kaleva
+                Boat Name: Gypsy
+                        Description: Oil change and general routine maintenance (check fluid levels, clean sea strainers etc.).
+                        Status: Service call has been scheduled.
+
+                        Description: Both speed and depth readings on data unit are significantly less than the owner thinks they should be.
+                        Status: Technician has scheduled appointment with owner to attempt to verify the problem.
+
+                Boat Name: Axxon II
+        First Name: Mary and Bill       Last Name: Elend        City: Rivard
+                Boat Name: Anderson III
+                        Description: Fuse on port motor blown on two occasions. Diagnose and repair.
+                        Status: Open
+
+Marina: Alexamara Central
+        First Name: Bruce and Doris     Last Name: Adney        City: Bowton
+                Boat Name: Anderson II
+                        Description: Air conditioner periodically stops with code indicating low coolant level. Diagnose and repair.
+                        Status: Technician has verified the problem. Air conditioning specialist has been called.
+
+                        Description: Engine oil level has been dropping drastically. Diagnose and repair.
+                        Status: Open
+
+                        Description: Routine engine maintenance
+                        Status: Scheduled
+
+                        Description: Fiberglass repair
+                        Status: Scheduled
+
+                Boat Name: Bravo
+                        Description: Engine overheating. Loss of coolant. Diagnose and repair.
+                        Status: Open
+
+                        Description: Heat exchanger not operating correctly.
+                        Status: Technician has determined that the exchanger is faulty. New exchanger has been ordered.
+
+        First Name: Alyssa      Last Name: Kelly        City: Bowton
+                Boat Name: Chinook
+                        Description: Canvas severely damaged in windstorm. Order and install new canvas.
+                        Status: Open
+
+                        Description: Owner accident caused damage to forward portion of port side.
+                        Status: Technician has scheduled repair.
+
+        First Name: Ashton      Last Name: Trent        City: Bay Shores
+                Boat Name: Listy
+                        Description: Customer describes engine as making a clattering sound.
+                        Status: Technician suspects problem with either propeller or shaft and has scheduled the boat to be pulled from the water for further investigation.
+
+        First Name: Peter       Last Name: Smith        City: Lewiston
+                Boat Name: Mermaid
+        First Name: Daniel      Last Name: Feenstra     City: Kaleva
+                Boat Name: Gypsy
+                        Description: Oil change and general routine maintenance (check fluid levels, clean sea strainers etc.).
+                        Status: Service call has been scheduled.
+
+                        Description: Both speed and depth readings on data unit are significantly less than the owner thinks they should be.
+                        Status: Technician has scheduled appointment with owner to attempt to verify the problem.
+
+                Boat Name: Axxon II
+        First Name: Becky and Dave      Last Name: Smeltz       City: Glander Bay
+                Boat Name: Karvel
+                        Description: Electric-flush system periodically stops functioning. Diagnose and repair.
+                        Status: Open
+
+                        Description: Canvas leaks around zippers in heavy rain. Install overlap around zippers to prevent leaks.
+                        Status: Overlap has been created. Installation has been scheduled.
+
+Marina: Alexamara South
+        First Name: Maria       Last Name: Juarez       City: Rivard
+                Boat Name: Axxon IV
+                        Description: Air conditioning unit shuts down with HHH showing on the control panel.
+                        Status: Technician not able to replicate the problem. Air conditioning unit ran fine through multiple tests. Owner to notify technician if the problem recurs.
+
+        First Name: Mary Jane   Last Name: Blake        City: Bowton
+                Boat Name: Escape
+                Boat Name: Krispy
+                        Description: Canvas leaks around zippers in heavy rain. Install overlap around zippers to prevent leaks.
+                        Status: Overlap has been created. Installation has been scheduled.
