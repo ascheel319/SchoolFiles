@@ -1,0 +1,11 @@
+
+div {
+  width: 80px;
+  height: 80px;
+  
+}
+
+.radio {
+  transform: scale(0.7); /* Equal to scaleX(0.7) scaleY(0.7) */
+ 
+}

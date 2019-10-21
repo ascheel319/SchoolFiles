@@ -1,0 +1,68 @@
+.welcomeMessage
+{
+	text-align: center;
+	font-size: 50px;
+}
+
+.RFQbutton
+{
+        font-size: 18px;
+	text-align: center;
+	margin: 4px 2px;
+	cursor: pointer;
+	border: none;
+	color: white;
+	background-color: black;
+	padding: 15px 32px;
+}
+.Reportbutton
+{
+        font-size: 18px;
+	text-align: center;
+        margin: 4px 2px;
+        cursor: pointer;
+        border: none;
+        color: white;
+        background-color: black;
+        padding: 15px 32px;
+}
+.Partbutton
+{
+        font-size: 18px;
+        text-align: center;
+        margin: 4px 2px;
+        cursor: pointer;
+        border: none;
+        color: white;
+        background-color: black;
+        padding: 15px 32px;
+}
+.Accountbutton
+{
+        font-size: 18px;
+        text-align: center;
+        margin: 4px 2px;
+        cursor: pointer;
+        border: none;
+        color: white;
+        background-color: black;
+        padding: 15px 32px;
+}
+.buttons
+{
+	display: flex;
+	justify-content: center;
+	display: flex;	
+}
+.message
+{
+	font-size: 35px;
+}
+.information
+{
+	font-size: 25px;
+}
+.steps
+{
+	font-size: 20px;
+}

@@ -1,0 +1,44 @@
+.theForm
+{
+	display: table;
+	font-size: 25px;
+	float: center;
+}
+.formLeft
+{
+	display: table;
+}
+.formleft input
+{
+	display: table-cell;
+	font-size: 25px;
+}
+.formleft label
+{
+	display: inline-block;
+	width: 400px;
+}
+.formleft select
+{
+	display: table-cell;
+        font-size: 25px;
+}
+.button
+{
+        font-size: 18px;
+        text-align: center;
+        margin: 4px 2px;
+        cursor: pointer;
+        border: none;
+        color: white;
+        background-color: black;
+        padding: 15px 32px;
+
+        justify-content: center;
+}
+.buttons
+{
+        display: flex;
+        justify-content: center;
+        display: flex;
+}

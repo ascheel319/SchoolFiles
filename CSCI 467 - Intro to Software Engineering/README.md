@@ -1,0 +1,2 @@
+# CSCI 467 - Intro to Software Engineering
+I had this class spring of my junior year (2018). I took this class with Professor Rush. This is the fourth assignment that I had for this class. We did not have a lot of programming assignments in this class. I worked on this assignment with another student, Mike Stroner. Also the login.php file holds login credentials but those are no longer valid ones.

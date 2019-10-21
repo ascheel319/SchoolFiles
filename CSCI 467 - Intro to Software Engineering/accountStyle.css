@@ -1,0 +1,101 @@
+.title
+{
+	text-align: center;
+	font-size: 40px;
+}
+.theForm
+{
+        display: table;
+        font-size: 30px;
+}
+.accountForm
+{
+	float: left;
+	display: table-row;
+}
+.accountForm label
+{
+	
+	display: inline-block;
+	width: 150px;
+}
+.accountForm input
+{
+	display: table-cell;
+}
+.accountForm radio
+{
+	display: table-cell;
+}
+
+.repForm
+{
+	float: right;
+	display: tabel-row;
+}
+.repForm input
+{
+	display: table-cell;
+}
+.repForm label
+{
+	display: inline-block;
+	width: 250px;
+}
+
+.sAddressForm
+{
+	float: left;
+	display: table-row;
+}
+.sAddressForm label
+{
+	display: inline-block;
+	width: 100px;
+}
+.sAddressForm input
+{
+	display: table-cell;
+}
+.sAddressForm select
+{
+	display: table-cell;
+}
+.bAddressForm
+{
+	display: table-row;
+}
+.bAddressForm label
+{
+        display: inline-block;
+        width: 100px;
+}
+.bAddressForm input
+{
+        display: table-cell;
+}
+.bAddressForm select
+{
+        display: table-cell;
+}
+
+.button
+{
+	font-size: 18px;
+        text-align: center;
+        margin: 4px 2px;
+        cursor: pointer;
+        border: none;
+        color: white;
+        background-color: black;
+        padding: 15px 32px;
+
+	justify-content: center;
+}
+.buttons
+{
+        display: flex;
+        justify-content: center;
+        display: flex;
+}
+

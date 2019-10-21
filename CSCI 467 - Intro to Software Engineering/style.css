@@ -1,0 +1,109 @@
+:root
+{
+--size: 20px;/*this is for the normal words*/
+}
+.title
+{
+	text-align: center;//to get the thing center
+}
+
+/*p, theForm, formLeft, option, formleft label, formleft input, and select
+ is how the textboxes line up*/
+p
+{
+	display: table-row;
+}
+
+.theForm
+{
+	display: table;
+	font-size: var(--size);
+}
+.formleft
+{
+	float: left;
+	display: table-cell;
+}
+.formleft option
+{
+        font-size: var(--size);
+}
+.formleft select
+{
+        font-size: var(--size);
+}
+
+.formleft label
+{
+	display: table-cell;
+        font-size: var(--size);
+}
+.formleft input
+{
+	display: table-cell;
+        font-size: var(--size);
+}
+.formRight
+{
+	float: right;
+        font-size: var(--size);
+}
+.formRight label
+{
+	display: table-cell;
+        font-size: var(--size);
+}
+.formRight input
+{
+	display: table-cell;
+        font-size: var(--size);
+	size: 5px;
+}
+.formRight option
+{
+        font-size: var(--size);
+}
+.formRight select
+{
+        font-size: var(--size);
+}
+
+.partForm
+{
+	float: left;
+	font-size: var(--size);
+}
+.partForm label
+{
+	display: table-cell;
+        font-size: var(--size);
+}
+.partForm input
+{
+	display: table-cell;
+        font-size: var(--size);
+}
+.manufacturerForm
+{
+	float: right;
+	font-size: var(--size);
+}
+
+.manufacturerForm label
+{
+	display: table-cell;
+        font-size: var(--size);
+}
+.manufacturerForm input
+{
+	display: table-cell;
+        font-size: var(--size);
+}
+
+.button
+{
+        font-size: var(--size);
+/*	margin: 0 auto;
+	display: block;
+	text-align: center;*/
+}
